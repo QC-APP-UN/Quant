@@ -1,28 +1,21 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-PROYECTO QUÍMICA CUÁNTICA
-"""
-
-import eel
-
-eel.init('src')
-
-
 import math
 from matplotlib import pyplot as plt
 import numpy as np
 from scipy import integrate
 import os
+import sys
+
+global result
 
 e= math.e
 pi = math.pi
 
-@eel.expose
+result=0
+gauss = "e**-( ((x-1)**2) /2)"
+
 def Cnormalize():
     os.remove("src/imgpython/normPlot.png")
 
-@eel.expose
 def Gnormalize(f):
     sol= integrate.quad(lambda x: eval(f),-np.inf,np.inf)
     
@@ -37,16 +30,19 @@ def Gnormalize(f):
     plt.close('all')
     plt.clf()
     plt.plot(x,y)
-    plot=plt.savefig("src/imgpython/normPlot.png")
-    return plot
+    #plot=plt.savefig("src/imgpython/normPlot.png")
+    return
 
-
-@eel.expose
 def Nnormalize(f):
-    sol= integrate.quad(lambda x: eval(str(f)),-np.inf,np.inf)
-    StringSol= str(sol[0]) 
-    print(StringSol)
-    return StringSol
+    global StringSol
+    sol= integrate.quad(lambda x: eval(str(f))**2,-np.inf,np.inf)
+    StringSol= str(1/(sol[0]**(1/2))) 
+    return
 
+Nnormalize(gauss)
+Gnormalize(gauss)
 
-eel.start('norm.html', port=8070)
+print(StringSol)
+
+#Gnormalize(sys.argv[1])
+#Nnormalize(sys.argv[1])
