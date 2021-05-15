@@ -146,7 +146,7 @@
                       <Component id="jLabel4" min="-2" pref="326" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="0" min="-2" pref="326" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="294" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

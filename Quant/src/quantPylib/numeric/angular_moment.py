@@ -9,3 +9,21 @@ Contributor: Nicolas Gomez Castillo
 
 """
 
+import numpy as np
+import math
+from scipy.integrate import quad
+from sympy import *
+
+e = math.e
+pi = math.pi
+
+
+# Real part of spherical harmonics
+
+# T is theta
+# P is phi
+
+def fac(n):
+    y = np.math.factorial(n)
+    return y
+
