@@ -6,7 +6,6 @@ Created on Fri Nov 13 20:11:04 2020
 @author: davidarchilapena
 """
 
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -17,12 +16,9 @@ Created on Wed Oct  7 16:27:10 2020
 
 """IMPORTANTE: Necesita una guía de uso."""
 
-import eel
-
-eel.init('src')
-
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 
 """
 Método de Numerov.
@@ -30,7 +26,6 @@ Este programa emplea el método de numerov para un potencial dado.
 """
 
 
-@eel.expose
 def numerovN2(n,E1,E2,xi,xf):
 
     plt.close('all')
@@ -151,9 +146,8 @@ def numerovN2(n,E1,E2,xi,xf):
 
     return response
 
-eel.start('potn.html', port=8120)
 """-------------------------------------------------------------------------"""  
 #El truco puede estar en usar los límites como condición para decidir si es
 #o no un buen valor de energía.
 
-#numerovN2(4,1,2,-1,1)
+numerovN2(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])

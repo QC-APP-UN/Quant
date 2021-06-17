@@ -6,13 +6,10 @@ Created on Sat Oct 10 22:47:02 2020
 @author: davidarchilapena
 """
 
-import eel
-
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-
-eel.init('src')
+import sys
 
 """
 Entradas
@@ -26,7 +23,6 @@ Entradas
 """-------------------------------------------------------------------------"""
 
 
-@eel.expose
 def numerovN2(k,E1,E2):
 
     plt.close('all')
@@ -156,7 +152,5 @@ def numerovN2(k,E1,E2):
 
 """-------------------------------------------------------------------------"""  
 
-
-eel.start('pot2.html', port=8110)
-
+numerovN2(sys.argv[1],sys.argv[2],sys.argv[3])
 

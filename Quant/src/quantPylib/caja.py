@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Nov 13 11:27:29 2020
+Created on Fri Jun 11 15:38:31 2021
 
-@author: davidarchilapena
+@author: rafa
 """
-
-import eel
 
 import numpy as np
 import math
@@ -14,20 +12,13 @@ from matplotlib import pyplot as plt
 from mpl_toolkits import mplot3d
 from matplotlib import animation
 import os
-
-eel.init('src')
+import sys
 
 
 e= math.e
 pi = math.pi
 
-
-@eel.expose
 def fCaja(d,n1,n2,n3,L1,L2,L3,M):
-
-    plt.close('all')
-    plt.clf()
-
     d=float(d)
     n1=float(n1)
     n2=float(n2)
@@ -46,11 +37,11 @@ def fCaja(d,n1,n2,n3,L1,L2,L3,M):
         vec_psi = np.vectorize(psi)
         x= np.arange(0,L1,.001)
         y= vec_psi(x)
-        plt.close('all')
-        plt.clf()
+        plt.xlabel('x')
+        plt.ylabel(r'$\mathrm{\psi}$')
         plt.plot(x,y)
-        plt.savefig("src/imgpython/cajaPlot.png", dpi=300)
-        print("funciona con d=1")
+        plt.show()
+        
         
     if d==2:
         
@@ -74,7 +65,7 @@ def fCaja(d,n1,n2,n3,L1,L2,L3,M):
         ax.set_zlabel(r'$\mathrm{\psi}$');
         ax.view_init(40, 35)
         ax.set_title(r'$\mathrm{\psi(x,y)}$');
-        plt.savefig("src/imgpython/cajaPlot.png", dpi=300)
+        plt.show()
 
     if d==3:
          
@@ -106,7 +97,9 @@ def fCaja(d,n1,n2,n3,L1,L2,L3,M):
         ani = animation.FuncAnimation(fig, psiZ, fargs=(z, line), interval=50, blit=False)
             
         ani.save('src/imgpython/cajaPlot.gif', dpi=300)
-         
-         
-                    
-eel.start('caja.html', port=8020)
+        
+fCaja(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8]) #d,n1,n2,n3,L1,L2,L3,M
+
+#seems to work fine, times reported in data i have
+#check again when plots are defined for the project 
+#:)

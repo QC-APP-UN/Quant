@@ -6,15 +6,12 @@ Created on Thu Nov 26 19:02:08 2020
 @author: davidarchilapena
 """
 
-import eel
-
 import numpy as np
 import math
 from matplotlib import pyplot as plt
 from scipy import integrate
 from mpl_toolkits import mplot3d
-
-eel.init('src')
+import sys
 
 e= math.e
 pi = math.pi
@@ -116,7 +113,6 @@ def moman(l,m):
         
         plt.savefig("src/imgpython/hidPlot2.png", dpi=300)
         
-@eel.expose
 def hid(n,l,m,Z):
 
     n=int(n)
@@ -191,6 +187,4 @@ def hid(n,l,m,Z):
         
     
     
-#hid(5,0,0,5)
-
-eel.start('hid.html', port=8040)
+hid(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])

@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sun Nov 22 13:00:19 2020
+Created on Fri Jun 11 16:18:46 2021
 
-@author: davidarchilapena
+@author: rafa
 """
-
-import eel
 
 import numpy as np
 import math
@@ -14,12 +12,11 @@ from scipy import integrate
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as axes3d
 import os
+import time
+import sys
 
 e= math.e
 pi = math.pi
-
-
-eel.init('src')
 
 #Parte real de los armónicos esféricos. 
 
@@ -31,8 +28,6 @@ eel.init('src')
 def fac(n):
     y= np.math.factorial(n)
     return y
-
-@eel.expose
 def moman(l,m):
 
     plt.close('all')
@@ -144,10 +139,11 @@ def moman(l,m):
     
     return Yml_string
         
-        
-#print(moman(2,1))
+inicio=time.time()   
+moman(sys.argv[1],sys.argv[2])
+fin=time.time()
+print((inicio-fin)*1000)
 
-eel.start('moman.html', port=8050)
-        
-        
-        
+#check again when plots are determined for the project
+#seems fine so far 
+#:/
