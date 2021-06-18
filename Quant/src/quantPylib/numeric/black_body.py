@@ -54,7 +54,7 @@ def cn1(T):
 def cn2(lmax, f):
 
     lmax=float(lmax)
-    f= float(lmax)
+    f= float(f)
     
     if lmax=='':
         lmax= c/f
