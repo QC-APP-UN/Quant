@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Apr 18 20:51:27 2021
-
 @author: rafa
 """
 
@@ -41,7 +40,7 @@ def Spher(l,m,x,y):
         Y=((-1)**m)*sqrt(2)*Y.real
     else:
         Y=sph_harm(0,l,x,y)
-    ()
+
     x,y,z=carte(abs(Y),x, y)
     fig = plt.figure()
     ax = fig.add_subplot(projection='3d')
@@ -50,4 +49,6 @@ def Spher(l,m,x,y):
     cmap = plt.get_cmap('viridis_r')
     norm = mcolors.Normalize(vmin=z.min(), vmax=z.max())
     plot = ax.plot_surface(x,y,z, rstride=1, cstride=1,facecolors=cmap(norm(z)),linewidth=0, antialiased=False,alpha=0.5)
-                    
+if __name__ == "__main__":
+    Spher(1,2,1,1)
+    plt.show()

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d6783115-f562-4126-8bff-681c0f725d8c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/momanalt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/angular_momentum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/black_body.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/hidrogenlike_atom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/numerov_method_pot2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/numerov_method_potn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/orthogonality.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/particle_box.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/perturbation_theory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numeric/quant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numeric/WORK_RECORD.md" beforeDir="false" afterPath="$PROJECT_DIR$/numeric/WORK_RECORD.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numeric/angular_moment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quantView/AngularMomentum_Frame1.form" beforeDir="false" afterPath="$PROJECT_DIR$/../quantView/AngularMomentum_Frame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quantView/AngularMomentum_Frame1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quantView/AngularMomentum_Frame.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1saGHWUyZetdEG2HEth4DjbvnNQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="angular_momentum" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="quantPylib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/numeric" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/numeric/angular_momentum.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.angular_momentum" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6783115-f562-4126-8bff-681c0f725d8c" name="Default Changelist" comment="" />
+      <created>1621103213980</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621103213980</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

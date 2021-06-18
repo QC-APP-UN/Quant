@@ -25,7 +25,7 @@ def norm():
 
 @eel.expose
 def hid():
-    subprocess.Popen("python3 hid.py", shell=True)
+    subprocess.Popen("python3 hidrogenlike_atom.py", shell=True)
 
 @eel.expose
 def moman():
@@ -42,19 +42,19 @@ def osar():
 
 @eel.expose
 def pertur():
-    subprocess.Popen("python3 pertur.py", shell=True)
+    subprocess.Popen("python3 perturbation_theory.py", shell=True)
 
 @eel.expose
 def pot2():
-    subprocess.Popen("python3 pot2.py", shell=True)
+    subprocess.Popen("python3 numerov_method_pot2.py", shell=True)
 
 @eel.expose
 def potn():
-    subprocess.Popen("python3 potn.py", shell=True)
+    subprocess.Popen("python3 numerov_method_potn.py", shell=True)
 
 @eel.expose
 def cn():
-    subprocess.Popen("python3 cn.py", shell=True)
+    subprocess.Popen("python3 black_body.py", shell=True)
 
 
 

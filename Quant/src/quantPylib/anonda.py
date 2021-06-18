@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat May  8 17:01:23 2021
+Created on Sun Nov 22 12:17:46 2020
 
-@author: rafa
+@author: davidarchilapena
 """
+
+import eel
 
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.animation import FuncAnimation
 import math
-import time 
-import sys
+
+eel.init('src')
 
 # psi = (2/L1)**(1/2)*(np.sin(n1*pi*x)/L1)
 
 e= math.e
 pi = math.pi
 
+@eel.expose
 def anonda(n1,n2,c1,c2):
     
     n1= float(n1)
@@ -25,13 +28,13 @@ def anonda(n1,n2,c1,c2):
     c1= float(c1)
     c2= float(c2)
 
-    # plt.close('all')
-    # plt.clf()
+    plt.close('all')
+    plt.clf()
 
-    cn1= c1/(c1+c2)  
-    cn2= c2/(c1+c2)  
+    cn1= c1/(c1+c2)
+    cn2= c2/(c1+c2)
     
-    N2= 1/(c1**2+c2**2)  
+    N2= 1/(c1**2+c2**2)
     
     
     L=1.0 # De referencia
@@ -42,17 +45,16 @@ def anonda(n1,n2,c1,c2):
     
     def p2(x):
         y= cn2*((2/L)**(0.5)*np.sin(pi*x*n2/L))
-        return y  
+        return y
     
-    # psi1 = np.vectorize(p1)
-    # psi2 = np.vectorize(p2)
+    psi1 = np.vectorize(p1)
+    psi2 = np.vectorize(p2)
     
     
     E1= (n1*pi*2)**2/(8) 
-    E2= (n2*pi*2)**2/(8) 
-    # x = np.linspace(0, 1, 1000)
-    x=np.arange(0,1,0.01)
-    y = N2*(cn1*((p1(x))**2) + cn2*((p2(x))**2) + np.cos((E2-E1)*(2*pi)*0)*p1(x)*p2(x)) 
+    E2= (n2*pi*2)**2/(8)
+    x = np.linspace(0, 1, 1000)
+    y = N2*(cn1*((psi1(x))**2) + cn2*((psi2(x))**2) + np.cos((E2-E1)*(2*pi)*0)*psi1(x)*psi2(x))
     fig = plt.figure()
     line, = plt.plot(x, y, lw=3)
     plt.xlabel('x')
@@ -63,22 +65,24 @@ def anonda(n1,n2,c1,c2):
         line.set_data([], [])
         return line,
     def animate(i):
-        x = np.linspace(0, 1, 100)
+        x = np.linspace(0, 1, 1000)
         E1= (n1*pi*2)**2/(8) 
         E2= (n2*pi*2)**2/(8)
         T= 1/(E2-E1)
         t= i*T/8
-        y = N2*(cn1*((p1(x))**2) + cn2*((p2(x))**2) + np.cos((E2-E1)*(2*pi)*t)*p1(x)*p2(x))
+        y = N2*(cn1*((psi1(x))**2) + cn2*((psi2(x))**2) + np.cos((E2-E1)*(2*pi)*t)*psi1(x)*psi2(x))
         line.set_data(x, y)
         return line,
     
     anim = FuncAnimation(fig, animate, init_func=init,
-                                    frames=10, interval=1, blit=True)
+                                   frames=200, interval=1, blit=True)
+    
     anim.save('src/imgpython/anondaPlot.gif', writer='imagemagick', dpi=300)
-inicio=time.time()    
-anonda(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]) # n1, n2 != n1, c1, c2
-fin=time.time()
-print((fin-inicio)*1000)
-#execution time around 5-10 sec (could be better)
-#check for later when plots are defined
-#:)
+    
+    
+eel.start('anonda.html', port=8840)
+
+
+
+
+

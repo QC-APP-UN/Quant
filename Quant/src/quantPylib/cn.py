@@ -6,17 +6,19 @@ Created on Fri Dec  4 07:37:38 2020
 @author: davidarchilapena
 """
 
+import eel
 
 import numpy as np
 import math
 from matplotlib import pyplot as plt
 from scipy import integrate
 from mpl_toolkits import mplot3d
-import sys
 
 import decimal
 decimal.getcontext().prec = 100
 
+
+eel.init('src')
 
 e= math.e
 pi = math.pi
@@ -26,6 +28,7 @@ kb= 1.381*10**(-23)
 
 M= 2.898*10**(-3)
 
+@eel.expose
 def cn1(T):
 
     print(T)
@@ -51,7 +54,8 @@ def cn1(T):
     plt.annotate(r'Máximo $\lambda_Tmax =${}'.format(lmax), xy = (lmax, graf1(lmax)), xycoords = 'data', xytext = (lmax+2000*nm, graf1(lmax)), textcoords = 'data', arrowprops = dict(arrowstyle = "->"))
     plt.savefig("src/imgpython/cn1Plot.png", dpi=300)
 
-def cn2(lmax, f):
+@eel.expose
+def cn2(lmax,f):
 
     lmax=float(lmax)
     f= float(lmax)
@@ -79,5 +83,5 @@ def cn2(lmax, f):
     plt.annotate(r'Máximo $\lambda_Tmax =${}'.format(lmax), xy = (lmax, graf1(lmax)), xycoords = 'data', xytext = (lmax+2000*nm, graf1(lmax)), textcoords = 'data', arrowprops = dict(arrowstyle = "->"))
     plt.savefig("src/imgpython/cn2Plot.png", dpi=300)
 
-# cn1(sys.argv[1]) #T
-#cn2(sys.argv[1], sys.argv[1]) # lmax
+eel.start('cn.html', port=8030)
+

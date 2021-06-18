@@ -6,17 +6,19 @@ Created on Fri Nov 13 17:04:29 2020
 @author: davidarchilapena
 """
 
+import eel
+
 import numpy as np
 import math
 from matplotlib import pyplot as plt
 from scipy import integrate
 from mpl_toolkits import mplot3d
-import sys
 
 e= math.e
 pi = math.pi
 hbar= 1.054571628*10**-34
 
+eel.init('src')
 
     
 #Función Interna (No usar @eel.expose)
@@ -281,13 +283,11 @@ def cArmonico2D(v1,v2,a,f):
         ax.set_title(r'$\mathrm{\psi(x,y)}$'); 
         plt.savefig('src/imgpython/osarPlot.png')
 
+@eel.expose
 def osar(d,f,m,v1,v2):
 
     d=int(d)
-    if f == "hbar":
-        f=hbar
-    else:
-        f=float(f)
+    f=float(f)
     if m=='me':
         m=float(9.10938291*10**(-31))
     else:
@@ -302,7 +302,9 @@ def osar(d,f,m,v1,v2):
     if d==2:
         cArmonico2D(v1,v2,a,f)
         
-osar(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+#osar(2,hbar,1/(2*pi),5,2)
 
+
+eel.start('osar.html', port=8090)
 
         
