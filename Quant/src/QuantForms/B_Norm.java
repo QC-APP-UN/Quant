@@ -212,7 +212,7 @@ public class B_Norm extends javax.swing.JFrame {
             
             // + Text Outputs
             
-            B001_L_5.setText(result); // Normalization Constant              
+            //B001_L_5.setText(result); // Normalization Constant              
         }
         catch(IOException e){
         
