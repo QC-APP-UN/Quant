@@ -5,6 +5,10 @@
  */
 package QuantForms;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  *
  * @author davidarchilapena
@@ -118,6 +122,11 @@ public class C_IAO extends javax.swing.JFrame {
         C002_L_1.setToolTipText("");
 
         C002_B_1.setText("Oscilate!");
+        C002_B_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C002_B_1ActionPerformed(evt);
+            }
+        });
 
         C002_L_3.setFont(new java.awt.Font("Ancizar Sans", 0, 18)); // NOI18N
         C002_L_3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -236,6 +245,50 @@ public class C_IAO extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void C002_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C002_B_1ActionPerformed
+        try {
+            
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "C_IAO";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
+            }
+            
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
+            
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_C002_B_1ActionPerformed
 
     /**
      * @param args the command line arguments

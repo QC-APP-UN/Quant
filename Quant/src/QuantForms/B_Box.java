@@ -289,50 +289,47 @@ public class B_Box extends javax.swing.JFrame {
     }//GEN-LAST:event_B003_TF_6ActionPerformed
 
     private void B003_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B003_B_1ActionPerformed
-      try {                
-         // create a new array of 3 strings, used as input command
-            String[] cmdArray = new String[3];
-            cmdArray[0] = ""; //Python Path
-            cmdArray[1] = ""; //.py path
+      try {
             
-            //+ Inputs
-            cmdArray[2] = B003_CB_1.getSelectedItem().toString(); // Dimensions
-            cmdArray[3] = B003_TF_1.getText(); //x quantum number
-            cmdArray[4] = B003_TF_3.getText(); //y quantum number
-            cmdArray[5] = B003_TF_5.getText(); //z quantum number
-            cmdArray[6] = B003_TF_2.getText(); //x length
-            cmdArray[7] = B003_TF_4.getText(); //y length
-            cmdArray[8] = B003_TF_6.getText(); //z length
-    
-                    // print out a message on the console if we want
-                       System.out.println("Working");
-
-                    // create a process and execute cmdArray and currect environment
-                       Process p = Runtime.getRuntime().exec(cmdArray,null);                
-
-                       String result = null;
-                       BufferedReader in =
-                           new BufferedReader(new InputStreamReader(p.getInputStream()));
-                       String inputLine;
-                       while ((inputLine = in.readLine()) != null) {
-                           System.out.println(inputLine);
-                           if ( result == null )
-                               result = "";
-                           result += inputLine;
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "B_Box";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
             }
-            in.close();
             
-            // + Text Outputs
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
             
-            //none       
         }
         catch(IOException e){
-        
-        }
-        
-        //Image Outputs
-        
-        //B003_L_9.setIcon(); // Particle in a Box Graph      
+            e.printStackTrace();
+        } 
     }//GEN-LAST:event_B003_B_1ActionPerformed
 
     /**

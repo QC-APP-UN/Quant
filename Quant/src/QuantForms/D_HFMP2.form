@@ -123,7 +123,7 @@
                       <Component id="D001_T_1" min="-2" pref="162" max="-2" attributes="0"/>
                       <Component id="D001_T_3" min="-2" pref="113" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -240,6 +240,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Run!"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B006_B_1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="D001_L_7">
       <Properties>

@@ -5,6 +5,10 @@
  */
 package QuantForms;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  *
  * @author davidarchilapena
@@ -73,7 +77,7 @@ public class C_HLA extends javax.swing.JFrame {
                 .addComponent(C004_T_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(C004_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,6 +124,11 @@ public class C_HLA extends javax.swing.JFrame {
 
         C004_B_1.setText("Create Hidrogen-like Functions!");
         C004_B_1.setActionCommand("");
+        C004_B_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C004_B_1ActionPerformed(evt);
+            }
+        });
 
         C004_L_3.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         C004_L_3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -250,6 +259,50 @@ public class C_HLA extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void C004_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C004_B_1ActionPerformed
+        try {
+            
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "C_HLA";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
+            }
+            
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
+            
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_C004_B_1ActionPerformed
 
     /**
      * @param args the command line arguments

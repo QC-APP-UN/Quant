@@ -132,6 +132,11 @@ public class B_Huck extends javax.swing.JFrame {
         });
 
         B005_B_1.setText("Run Huckel");
+        B005_B_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B005_B_1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +175,51 @@ public class B_Huck extends javax.swing.JFrame {
     private void B005_TF_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B005_TF_1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_B005_TF_1ActionPerformed
+
+    private void B005_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B005_B_1ActionPerformed
+        
+        try {
+            
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "B_Huck";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
+            }
+            
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
+            
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_B005_B_1ActionPerformed
 
     /**
      * @param args the command line arguments

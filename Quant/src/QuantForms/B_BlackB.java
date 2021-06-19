@@ -275,45 +275,47 @@ public class B_BlackB extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B002A_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B002A_B_1ActionPerformed
-      try {                
-         // create a new array of 3 strings, used as input command
-            String[] cmdArray = new String[3];
-            cmdArray[0] = ""; //Python Path
-            cmdArray[1] = "";//.py path
+     try {
             
-            //+ Inputs
-            cmdArray[2] = "A";//By wave
-            cmdArray[3] = Integer.toString(B002A_SB_1.getValue()); // Wavelenght
-    
-                    // print out a message on the console if we want
-                       System.out.println("Working");
-
-                    // create a process and execute cmdArray and currect environment
-                       Process p = Runtime.getRuntime().exec(cmdArray,null);                
-
-                       String result = null;
-                       BufferedReader in =
-                           new BufferedReader(new InputStreamReader(p.getInputStream()));
-                       String inputLine;
-                       while ((inputLine = in.readLine()) != null) {
-                           System.out.println(inputLine);
-                           if ( result == null )
-                               result = "";
-                           result += inputLine;
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "B_Black_2";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
             }
-            in.close();
             
-            // + Text Outputs
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
             
-            //none       
         }
         catch(IOException e){
-        
-        }
-        
-        //Image Outputs
-        
-        //B002A_L_4.setIcon(); // BlackBody Graph                                       
+            e.printStackTrace();
+        }                                 
     }//GEN-LAST:event_B002A_B_1ActionPerformed
 
     private void B002B_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B002B_B_1ActionPerformed

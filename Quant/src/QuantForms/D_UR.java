@@ -5,6 +5,10 @@
  */
 package QuantForms;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  *
  * @author davidarchilapena
@@ -88,7 +92,7 @@ public class D_UR extends javax.swing.JFrame {
                     .addGroup(C003_T_3Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(D001_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         C003_T_3Layout.setVerticalGroup(
             C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,6 +136,11 @@ public class D_UR extends javax.swing.JFrame {
 
         B006_B_1.setText("Create the Morse U(R) curve!");
         B006_B_1.setActionCommand("");
+        B006_B_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B006_B_1ActionPerformed(evt);
+            }
+        });
 
         D001_L_7.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         D001_L_7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -316,6 +325,50 @@ public class D_UR extends javax.swing.JFrame {
     private void D001_TF_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D001_TF_6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_D001_TF_6ActionPerformed
+
+    private void B006_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B006_B_1ActionPerformed
+        try {
+            
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "D_UR";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
+            }
+            
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
+            
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_B006_B_1ActionPerformed
 
     /**
      * @param args the command line arguments

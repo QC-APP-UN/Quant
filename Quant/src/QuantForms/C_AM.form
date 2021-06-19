@@ -193,6 +193,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Create the spheric armonic!"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="C002_B_1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="C003_L_2">
       <Properties>

@@ -183,44 +183,47 @@ public class B_Norm extends javax.swing.JFrame {
     }//GEN-LAST:event_B001_TF_1ActionPerformed
 
     private void B001_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B001_B_1ActionPerformed
-        try {                
-         // create a new array of 3 strings, used as input command
-            String[] cmdArray = new String[3];
-            cmdArray[0] = "python3"; //Python Path
-            cmdArray[1] = "/Users/davidarchilapena/NetBeansProjects/Quant/src/Python/B_norm.py";//.py path
+        try {
             
-            //+ Inputs
-            cmdArray[2] = B001_TF_1.getText(); // Function to normalice
-    
-                    // print out a message on the console if we want
-                       System.out.println("Working");
-
-                    // create a process and execute cmdArray and currect environment
-                       Process p = Runtime.getRuntime().exec(cmdArray,null);                
-
-                       String result = null;
-                       BufferedReader in =
-                           new BufferedReader(new InputStreamReader(p.getInputStream()));
-                       String inputLine;
-                       while ((inputLine = in.readLine()) != null) {
-                           System.out.println(inputLine);
-                           if ( result == null )
-                               result = "";
-                           result += inputLine;
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "B_Norm";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
             }
-            in.close();
             
-            // + Text Outputs
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
             
-            //B001_L_5.setText(result); // Normalization Constant              
         }
         catch(IOException e){
-        
+            e.printStackTrace();
         }
-        
-        //Image Outputs
-        
-        //B001_P_3.setIcon(); // Function Graph
     }//GEN-LAST:event_B001_B_1ActionPerformed
 
     /**

@@ -5,6 +5,10 @@
  */
 package QuantForms;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  *
  * @author davidarchilapena
@@ -459,7 +463,47 @@ public class C_PT extends javax.swing.JFrame {
     }//GEN-LAST:event_C005A_TF_4ActionPerformed
 
     private void C005A_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C005A_B_1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "C_PT_1";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
+            }
+            
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
+            
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_C005A_B_1ActionPerformed
 
     private void C005A_TF_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C005A_TF_2ActionPerformed
@@ -471,7 +515,47 @@ public class C_PT extends javax.swing.JFrame {
     }//GEN-LAST:event_C005A_TF_3ActionPerformed
 
     private void C005B_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C005B_B_1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            
+            String[] pathArray = new String[4];
+            
+            
+            //------- Creation of "python" command -----------------
+            pathArray[0] = Path.executable_path; //Executable Path
+            pathArray[1] = "C_PT_2";
+            pathArray[2] = "5";
+            pathArray[3] = "3";
+            
+            String path = "";
+            
+            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
+            
+            System.out.println(pathArray.length); //Only in develop
+            
+            //------------------------------------------------------
+                        
+            
+            Process p = Runtime.getRuntime().exec(path);
+            
+            String stdin = null;
+            String stderr = null;
+            
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            
+            
+            while((stdin=in.readLine())!=null){
+                System.out.println(in);
+            }
+            
+            while((stderr=err.readLine())!=null){
+                System.out.println(err);
+            }
+            
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_C005B_B_1ActionPerformed
 
     private void C005B_TF_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C005B_TF_2ActionPerformed
