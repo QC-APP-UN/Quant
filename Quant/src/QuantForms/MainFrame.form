@@ -89,9 +89,6 @@
               <Image iconType="3" name="/Images/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Logo"/>
-            <Property name="mixingCutoutShape" type="java.awt.Shape" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="null"/>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
@@ -121,7 +118,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="jLabel8" min="-2" pref="326" max="-2" attributes="0"/>
-                  <EmptySpace pref="600" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
