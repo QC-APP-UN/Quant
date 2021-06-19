@@ -32,7 +32,6 @@ public class B_Norm extends javax.swing.JFrame {
     private void initComponents() {
 
         B001_TP = new javax.swing.JPanel();
-        B001_T_3 = new javax.swing.JLabel();
         B001_T_4 = new javax.swing.JLabel();
         B001_T_1 = new javax.swing.JLabel();
         B001_T_2 = new javax.swing.JLabel();
@@ -41,16 +40,13 @@ public class B_Norm extends javax.swing.JFrame {
         B001_TF_1 = new javax.swing.JTextField();
         B001_L_1 = new javax.swing.JLabel();
         B001_B_1 = new javax.swing.JButton();
+        B001_L_2 = new javax.swing.JLabel();
+        B001_L_3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Function Normalizator");
 
         B001_TP.setBackground(new java.awt.Color(0, 153, 153));
-
-        B001_T_3.setFont(new java.awt.Font("Baskerville", 0, 12)); // NOI18N
-        B001_T_3.setForeground(new java.awt.Color(255, 255, 255));
-        B001_T_3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        B001_T_3.setText("Description");
 
         B001_T_4.setText("Logo");
 
@@ -73,11 +69,9 @@ public class B_Norm extends javax.swing.JFrame {
                 .addComponent(B001_T_4)
                 .addGap(37, 37, 37)
                 .addComponent(B001_T_1)
-                .addGap(18, 18, 18)
-                .addGroup(B001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(B001_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(B001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         B001_TPLayout.setVerticalGroup(
             B001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,10 +84,9 @@ public class B_Norm extends javax.swing.JFrame {
                 .addGroup(B001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(B001_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(B001_TPLayout.createSequentialGroup()
-                        .addComponent(B001_T_2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B001_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 13, Short.MAX_VALUE))
+                        .addGap(12, 12, 12)
+                        .addComponent(B001_T_2)))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         B001_CR.setBackground(new java.awt.Color(204, 204, 204));
@@ -138,34 +131,47 @@ public class B_Norm extends javax.swing.JFrame {
             }
         });
 
+        B001_L_2.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
+        B001_L_2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        B001_L_2.setText("The normalizatin constant is:");
+
+        B001_L_3.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
+        B001_L_3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        B001_L_3.setText("Enter a function...");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(B001_TP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(B001_CR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(B001_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B001_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(320, 320, 320))
             .addGroup(layout.createSequentialGroup()
-                .addGap(401, 401, 401)
-                .addComponent(B001_B_1)
+                .addGap(104, 104, 104)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(B001_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B001_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B001_L_2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B001_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(B001_B_1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(B001_TP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addGap(84, 84, 84)
                 .addComponent(B001_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
                 .addComponent(B001_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(52, 52, 52)
+                .addComponent(B001_L_2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(B001_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(B001_B_1)
-                .addGap(135, 135, 135)
+                .addGap(107, 107, 107)
                 .addComponent(B001_CR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -206,7 +212,7 @@ public class B_Norm extends javax.swing.JFrame {
             
             // + Text Outputs
             
-            //B001_L_5.setText(result); // Normalization Constant              
+            B001_L_5.setText(result); // Normalization Constant              
         }
         catch(IOException e){
         
@@ -262,11 +268,12 @@ public class B_Norm extends javax.swing.JFrame {
     private javax.swing.JPanel B001_CR;
     private javax.swing.JLabel B001_CRT;
     private javax.swing.JLabel B001_L_1;
+    private javax.swing.JLabel B001_L_2;
+    private javax.swing.JLabel B001_L_3;
     private javax.swing.JTextField B001_TF_1;
     private javax.swing.JPanel B001_TP;
     private javax.swing.JLabel B001_T_1;
     private javax.swing.JLabel B001_T_2;
-    private javax.swing.JLabel B001_T_3;
     private javax.swing.JLabel B001_T_4;
     // End of variables declaration//GEN-END:variables
 }

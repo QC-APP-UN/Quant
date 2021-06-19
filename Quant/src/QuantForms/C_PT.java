@@ -30,10 +30,11 @@ public class C_PT extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         C005_T_1 = new javax.swing.JPanel();
-        C005_T_4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         C005_T_2 = new javax.swing.JLabel();
         C005_T_3 = new javax.swing.JLabel();
+        C005_T_5 = new javax.swing.JLabel();
+        C005_T_6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         C005A_TP_1 = new javax.swing.JTabbedPane();
@@ -71,11 +72,6 @@ public class C_PT extends javax.swing.JFrame {
 
         C005_T_1.setBackground(new java.awt.Color(0, 153, 153));
 
-        C005_T_4.setFont(new java.awt.Font("Baskerville", 0, 12)); // NOI18N
-        C005_T_4.setForeground(new java.awt.Color(255, 255, 255));
-        C005_T_4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        C005_T_4.setText("Description");
-
         jLabel5.setText("Logo");
 
         C005_T_2.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
@@ -86,7 +82,17 @@ public class C_PT extends javax.swing.JFrame {
         C005_T_3.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         C005_T_3.setForeground(new java.awt.Color(255, 255, 255));
         C005_T_3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        C005_T_3.setText("Perturbation Theory: One Dimensional Fisrt Order Correction.");
+        C005_T_3.setText("Perturbation Theory ");
+
+        C005_T_5.setFont(new java.awt.Font("Baskerville", 0, 14)); // NOI18N
+        C005_T_5.setForeground(new java.awt.Color(255, 255, 255));
+        C005_T_5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        C005_T_5.setText("One Dimensional Fisrt ");
+
+        C005_T_6.setFont(new java.awt.Font("Baskerville", 0, 14)); // NOI18N
+        C005_T_6.setForeground(new java.awt.Color(255, 255, 255));
+        C005_T_6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        C005_T_6.setText("Order Correction.");
 
         javax.swing.GroupLayout C005_T_1Layout = new javax.swing.GroupLayout(C005_T_1);
         C005_T_1.setLayout(C005_T_1Layout);
@@ -99,25 +105,29 @@ public class C_PT extends javax.swing.JFrame {
                 .addComponent(C005_T_2)
                 .addGap(18, 18, 18)
                 .addGroup(C005_T_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(C005_T_4, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C005_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(C005_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(C005_T_6)
+                    .addComponent(C005_T_5))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         C005_T_1Layout.setVerticalGroup(
             C005_T_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C005_T_1Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(C005_T_1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(C005_T_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(C005_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(C005_T_1Layout.createSequentialGroup()
-                        .addComponent(C005_T_3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(C005_T_4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 13, Short.MAX_VALUE))
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(C005_T_1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(C005_T_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(C005_T_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(C005_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(C005_T_5))
+                            .addGroup(C005_T_1Layout.createSequentialGroup()
+                                .addComponent(C005_T_3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                .addComponent(C005_T_6)))))
+                .addGap(15, 15, 15))
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -133,7 +143,7 @@ public class C_PT extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +229,7 @@ public class C_PT extends javax.swing.JFrame {
         C005A_P_0Layout.setHorizontalGroup(
             C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C005A_P_0Layout.createSequentialGroup()
-                .addGap(280, 280, 280)
+                .addGap(25, 25, 25)
                 .addGroup(C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(C005A_P_0Layout.createSequentialGroup()
                         .addComponent(C005A_B_1)
@@ -241,18 +251,18 @@ public class C_PT extends javax.swing.JFrame {
                             .addComponent(C005A_TF_3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005A_L_2)
                             .addComponent(C005A_L_1))))
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         C005A_P_0Layout.setVerticalGroup(
             C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C005A_P_0Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(30, 30, 30)
                 .addGroup(C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(C005A_P_0Layout.createSequentialGroup()
                         .addComponent(C005A_L_1)
                         .addGap(252, 252, 252))
                     .addGroup(C005A_P_0Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(42, 42, 42)
                         .addComponent(C005A_L_2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(C005A_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -271,9 +281,8 @@ public class C_PT extends javax.swing.JFrame {
                             .addComponent(C005A_TF_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005A_TF_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005A_L_6))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(C005A_B_1)
-                .addGap(17, 17, 17))
+                .addGap(27, 27, 27))
         );
 
         C005A_TP_1.addTab("Particle in a Box", C005A_P_0);
@@ -354,8 +363,8 @@ public class C_PT extends javax.swing.JFrame {
         C004B_P_0.setLayout(C004B_P_0Layout);
         C004B_P_0Layout.setHorizontalGroup(
             C004B_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, C004B_P_0Layout.createSequentialGroup()
-                .addContainerGap(293, Short.MAX_VALUE)
+            .addGroup(C004B_P_0Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(C004B_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(C004B_P_0Layout.createSequentialGroup()
                         .addComponent(C005B_B_1)
@@ -377,18 +386,18 @@ public class C_PT extends javax.swing.JFrame {
                             .addComponent(C005B_TF_3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005B_L_2)
                             .addComponent(C005B_L_1))))
-                .addGap(278, 278, 278))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         C004B_P_0Layout.setVerticalGroup(
             C004B_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C004B_P_0Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(21, 21, 21)
                 .addGroup(C004B_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(C004B_P_0Layout.createSequentialGroup()
                         .addComponent(C005B_L_1)
                         .addGap(252, 252, 252))
                     .addGroup(C004B_P_0Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(42, 42, 42)
                         .addComponent(C005B_L_2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(C005B_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -407,9 +416,8 @@ public class C_PT extends javax.swing.JFrame {
                             .addComponent(C005B_TF_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005B_TF_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005B_L_6))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(C005B_B_1)
-                .addGap(23, 23, 23))
+                .addGap(36, 36, 36))
         );
 
         C005A_TP_1.addTab("Armonic Oscilator", C004B_P_0);
@@ -418,12 +426,12 @@ public class C_PT extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(C005_T_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(C005A_TP_1)
-                .addContainerGap())
+            .addComponent(C005_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(C005A_TP_1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1063,7 +1071,8 @@ public class C_PT extends javax.swing.JFrame {
     private javax.swing.JPanel C005_T_1;
     private javax.swing.JLabel C005_T_2;
     private javax.swing.JLabel C005_T_3;
-    private javax.swing.JLabel C005_T_4;
+    private javax.swing.JLabel C005_T_5;
+    private javax.swing.JLabel C005_T_6;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;

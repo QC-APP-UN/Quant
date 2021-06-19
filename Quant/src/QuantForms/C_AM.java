@@ -5,10 +5,6 @@
  */
 package QuantForms;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 /**
  *
  * @author davidarchilapena
@@ -33,7 +29,6 @@ public class C_AM extends javax.swing.JFrame {
     private void initComponents() {
 
         C003_T_3 = new javax.swing.JPanel();
-        C003_T_4 = new javax.swing.JLabel();
         C003_T_1 = new javax.swing.JLabel();
         C003_T_2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -50,11 +45,6 @@ public class C_AM extends javax.swing.JFrame {
         setTitle("Function Normalizator");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
-
-        C003_T_4.setFont(new java.awt.Font("Baskerville", 0, 12)); // NOI18N
-        C003_T_4.setForeground(new java.awt.Color(255, 255, 255));
-        C003_T_4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        C003_T_4.setText("Description");
 
         C003_T_1.setText("Logo");
 
@@ -78,10 +68,8 @@ public class C_AM extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(C003_T_2)
                 .addGap(18, 18, 18)
-                .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(C003_T_4, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         C003_T_3Layout.setVerticalGroup(
             C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,11 +78,8 @@ public class C_AM extends javax.swing.JFrame {
                 .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(C003_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(C003_T_3Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(C003_T_4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 13, Short.MAX_VALUE))
+                    .addComponent(jLabel7))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -125,11 +110,6 @@ public class C_AM extends javax.swing.JFrame {
         C003_L_1.setToolTipText("");
 
         C002_B_1.setText("Create the spheric armonic!");
-        C002_B_1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                C002_B_1ActionPerformed(evt);
-            }
-        });
 
         C003_L_2.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         C003_L_2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -162,21 +142,19 @@ public class C_AM extends javax.swing.JFrame {
             .addComponent(C003_T_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(293, 293, 293)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(C003_L_2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(C002_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(C003_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(C003_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(C002_TF_2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(C003_L_2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(C002_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(C003_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(337, 337, 337)
+                        .addComponent(C003_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(C002_TF_2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
                         .addComponent(C002_B_1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -184,7 +162,7 @@ public class C_AM extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(C003_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124)
+                .addGap(107, 107, 107)
                 .addComponent(C003_L_1)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -196,7 +174,7 @@ public class C_AM extends javax.swing.JFrame {
                     .addComponent(C002_TF_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(C002_B_1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -210,24 +188,6 @@ public class C_AM extends javax.swing.JFrame {
     private void C002_TF_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C002_TF_2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_C002_TF_2ActionPerformed
-
-    private void C002_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C002_B_1ActionPerformed
-      
-        try {
-            String s = null;
-            String PATH=Path.path_executable+" C_AM "+C002_TF_1.getText()+" "+C002_TF_2.getText();
-            System.out.println(PATH);
-            Process p = Runtime.getRuntime().exec(PATH);
-                           
-            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            while ((s=in.readLine())!=null){
-                System.out.println(s);
-            }
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_C002_B_1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,7 +265,6 @@ public class C_AM extends javax.swing.JFrame {
     private javax.swing.JLabel C003_T_1;
     private javax.swing.JLabel C003_T_2;
     private javax.swing.JPanel C003_T_3;
-    private javax.swing.JLabel C003_T_4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;

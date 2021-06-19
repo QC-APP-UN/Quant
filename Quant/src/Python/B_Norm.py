@@ -1,41 +1,55 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+PROYECTO QUÍMICA CUÁNTICA
+"""
+
 import math
 from matplotlib import pyplot as plt
-from matplotlib.pyplot import figure
 import numpy as np
 from scipy import integrate
 import os
 import sys
 
+global result
+
 e= math.e
 pi = math.pi
 
-def Cnormalize():
-    os.remove("/QClib/src/imgpython/normPlot.png") 
+result=0
+gauss = "e**-( ((x-1)**2) /2)"
 
-def Nnormalize(f):
-    global constant
-    sol= integrate.quad(lambda x: eval(str(f))**2,-np.inf,np.inf)
-    sol1 = (1/(sol[0]**(1/2)))
-    constant = round(sol1,7)
-    return
+# def Cnormalize():
+#     os.remove("src/imgpython/normPlot.png")
 
-Nnormalize(sys.argv[1])
-
-def Gnormalize(fun): 
+def Gnormalize(f):
+    sol= integrate.quad(lambda x: eval(f),-np.inf,np.inf)
+    
+    fun=f
     def f(x):
-        f = (eval(str(fun))/constant)**2
+        f = eval(fun)/sol[0]
         return f
 
-    vec_f = np.vectorize(f) 
+    vec_f = np.vectorize(f)
     x= np.arange(-10,10,.1)
     y= vec_f(x)
-    #plt.close('all')
-    #plt.clf()
-    plt.figure(figsize=(3,3)) 
+    plt.close('all')
+    plt.clf()
     plt.plot(x,y)
-    plt.savefig("QClib/src/imgpython/normPlot.png")    
-    #plt.show()
+    #plot=plt.savefig("src/imgpython/normPlot.png")
+    return
 
-Gnormalize(sys.argv[1])
+def Nnormalize(f):
+    global StringSol
+    sol= integrate.quad(lambda x: eval(str(f))**2,-np.inf,np.inf)
+    StringSol= str(1/(sol[0]**(1/2))) 
+    return 
 
-print(constant)
+print(Nnormalize(gauss))
+Gnormalize(gauss)
+
+# print(StringSol)
+
+# Gnormalize(sys.argv[1])
+# print(Nnormalize(sys.argv[1]))
+
