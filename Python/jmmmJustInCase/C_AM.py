@@ -1,22 +1,42 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 26 19:02:08 2020
+Created on Sun Nov 22 13:00:19 2020
 
 @author: davidarchilapena
 """
 
+import eel
+
 import numpy as np
 import math
-from matplotlib import pyplot as plt
 from scipy import integrate
-from mpl_toolkits import mplot3d
-import sys
+import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d.axes3d as axes3d
+import os
 
 e= math.e
 pi = math.pi
 
+
+eel.init('src')
+
+#Parte real de los armónicos esféricos. 
+
+#T es theta
+#P es phi
+
+
+#Función interna (no usar @eel.expose)
+def fac(n):
+    y= np.math.factorial(n)
+    return y
+
+@eel.expose
 def moman(l,m):
+
+    plt.close('all')
+    plt.clf()
 
     l=int(l)
     m=int(m)
@@ -89,8 +109,6 @@ def moman(l,m):
         Yml= '('+psi+')' + '*np.cos(abs(m)*P)'
         Yml= Yml.replace('m',str(m))
         
-        plt.close('all')
-        plt.clf()
         theta, phi = np.linspace(0, np.pi, 100), np.linspace(0, 2*np.pi, 100)
         T, P = np.meshgrid(theta, phi)
         R = abs(eval(Yml)) #NotSoSure
@@ -111,80 +129,25 @@ def moman(l,m):
             facecolors=cmap(norm(Z)),
             linewidth=0, antialiased=False, alpha=0.5)
         
-        plt.savefig("src/imgpython/hidPlot2.png", dpi=300)
+        plt.savefig('src/imgpython/momanPlot.png', dpi=300)
         
-def hid(n,l,m,Z):
-
-    n=int(n)
-    l=int(l)
-    m=int(m)
-    Z=int(Z)
+        Yml_string= Yml.replace('np.cos','cos')
+        Yml_string= Yml_string.replace('T','θ')
+        Yml_string= Yml_string.replace('P','φ')
+        Yml_string= Yml_string.replace('np.sin','sin')
+        Yml_string= Yml_string.replace('**','^')
+        Yml_string= Yml_string.replace('**1','')
+        Yml_string= Yml_string.replace('+0','')
+        Yml_string= Yml_string.replace('+-','-')
+        Yml_string= Yml_string.replace('abs({})'.format(str(m)),'[{}]'.format(str(m)))
+        Yml_string= Yml_string + '^2'
     
-    a= 1
-    E= -(Z**2/n**2)*(1/2)#(qe**2/(8*pi*e0*a))
-    #print(E)
-    
-    c=[1]
+    return Yml_string
         
-    psi=''
-    for i in range(0,n-l+1):
         
-        bN = (2*Z/(n*a))*(i+l+1-n)*c[i]/((i+1)*(i+2*l+2))
-        c.append(bN)
-            
-        psi= psi + str(c[i]) + '*R**' + str(i) + '+'
-     
-    if psi != '':
-        psi= '*('+ psi + '0' + ')'
-    
-    psi= 'e**(-Z*R/(n*a))*R**l'+ psi
+#print(moman(2,1))
+
+eel.start('moman.html', port=8050)
         
-    psi=psi.replace('l',str(l))
-    psi=psi.replace('Z',str(Z))
-    psi=psi.replace('n',str(n))
-    psi=psi.replace('a',str(a))
-    #print(psi)
-    sol= integrate.quad(lambda R: eval(psi),0,np.inf)
-    #print(sol)
-    def psiHidR(R): 
-        psin=eval(psi)/sol[0]
-        return psin
-    
-    plt.close('all')
-    plt.clf()
-    fig = plt.figure()
-    
-    ax1 = fig.add_subplot(121)
-    VpsiHidR = np.vectorize(psiHidR)
-    R= np.arange(0,10*n,.1/n)
-    y= VpsiHidR(R)
-    ax1.set_xlabel('r')
-    ax1.set_ylabel(r'$\Psi_R (r)$')
-    ax1.set_title(r'n={} ; l= {}'.format(str(n),str(l)))
-    ax1.plot(R,y)
-    
-    # plt.show()
-
-    x = np.linspace(-10*n,10*n, 100)
-    y = np.linspace(-10*n,10*n, 100)
-
-    X, Y = np.meshgrid(x, y)
-    Z = VpsiHidR((X**2+Y**2)**(1/2))
-    
-
-    ax = fig.add_subplot(122,projection='3d')
-    ax.contour3D(X, Y, Z, 50, cmap='viridis', edgecolor='none')
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
-    ax.set_zlabel(r'$\mathrm{\psi}$');
-    ax.view_init(40, 35)
-    ax.set_title(r'$\mathrm{\Psi_R(x,y)}$');
-    
-
-    plt.savefig("src/imgpython/hidPlot1.png", dpi=300)
-
-    moman(l,m)
         
-    
-    
-hid(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+        

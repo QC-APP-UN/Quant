@@ -1,153 +1,120 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 """
 Created on Sun Nov 22 13:00:19 2020
 
-@author: davidarchilapena
+Author: David Archila Pena
+Contributor: Nicolas Gomez Castillo
 """
 
-import eel
-
+import latex
+import sys
 import numpy as np
 import math
-from scipy import integrate
+from scipy.integrate import quad
+from sympy import *
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as axes3d
-import os
 
-e= math.e
+# Enable LaTEX compilation
+plt.rcParams['text.usetex'] = True
+
+e = math.e
 pi = math.pi
 
 
-eel.init('src')
+# For export data to java
+# np.set_printoptions(threshold=sys.maxsize)
 
-#Parte real de los armónicos esféricos. 
+# Real part of spherical harmonics
 
-#T es theta
-#P es phi
+# T is theta
+# P is phi
 
-
-#Función interna (no usar @eel.expose)
 def fac(n):
-    y= np.math.factorial(n)
+    y = np.math.factorial(n)
     return y
 
-@eel.expose
-def moman(l,m):
 
-    plt.close('all')
-    plt.clf()
+def angular_momentum(l, m):
+    l = int(l)
+    m = int(m)
 
-    l=int(l)
-    m=int(m)
-    
-    S= '((((2*l+1)/(4*pi))*(fac(l-abs(m))/fac(l+abs(m))))**1/2)'
-    Sm= S.replace('m',str(m))
-    Sm= Sm.replace('l',str(l))
-    
-    if l-abs(m)<0:
-        return '|m| no puede ser mayor a l.'
-        
-    elif l<0:
-        return 'l debe ser un número positivo y entero.'
-    
+    function = '((((2*l+1)/(4*pi))*(fac(l-abs(m))/fac(l+abs(m))))**1/2)'
+    function_m = function.replace('m', str(m))
+    function_m = function_m.replace('l', str(l))
+    if l - abs(m) < 0:
+        return 'The absolut value of m is greater than l'
+    elif l < 0:
+        return 'l must be a positive integer number'
     else:
-        
-        # w = sp.Symbol('w')
-        # P= '((l/(2**l*fac(l)))*(1-w**2)**(abs(m)/2))*sp.diff((w**2-1)**l,w,l+abs(m))'
-        # Pml= P.replace('l', str(l))
-        # Pml= Pml.replace('m', str(m))
-        
-        # Pc= str(eval(Pml))
-        # Pcos= Pc.replace('w','(np.cos(T))')
-        
-        # Y = Sm+ '*(' + Pcos + ')' #+ '*(np.cos(m*P))'
-        # Yml= Y.replace('m',str(m))
-        
-        if (-1)**(l-abs(m))==1:
-        
-            c=[1]
-            
-            psi=''
-            for i in range(0,(l-abs(m))+1):
-                if (-1)**(i)==1:
+        if (-1) ** (l - abs(m)) == 1:
+            c = [1]
+            psi = ''
+            for i in range(0, (l - abs(m)) + 1):
+                if (-1) ** i == 1:
                     c.append(0)
-                    c.append(((i+abs(m))*(i+abs(m)+1)-l*(l+1))*c[i]/((i+1)*(i+2)))
-                
-                    psi= psi + str(c[i]) + '*np.cos(T)**' + str(i) + '+'
-                    
-            
-            psi= '('+ psi + '0' + ')'
-            psi= '(np.sin(T)**abs(m)*'+psi+')'
-            psi= psi.replace('m',str(m))
-            sol= integrate.quad(lambda T: eval(psi),0,pi)
-            psi= psi+'/'+str(sol[0])
-            
-        
-        
-        if (-1)**(l-abs(m))==-1:
-        
-            c=[0,1]
-            
-            psi=''
-            for i in range(1,(l-abs(m))+1):
-                if (-1)**(i)==-1:
+                    c.append(((i + abs(m)) * (i + abs(m) + 1) - l * (l + 1)) * c[i] / ((i + 1) * (i + 2)))
+                    psi = psi + str(c[i]) + '*np.cos(T)**' + str(i) + '+'
+
+            psi = '(' + psi + '0' + ')'
+            psi = '(np.sin(T)**abs(m)*' + psi + ')'
+            psi = psi.replace('m', str(m))
+            sol = quad(lambda T: eval(psi), 0, pi)
+            psi = psi + '/' + str(sol[0])
+
+        if (-1) ** (l - abs(m)) == -1:
+            c = [0, 1]
+            psi = ''
+            for i in range(1, (l - abs(m)) + 1):
+                if (-1) ** i == -1:
                     c.append(0)
-                    c.append(((i+abs(m))*(i+abs(m)+1)-l*(l+1))*c[i]/((i+1)*(i+2)))
-                
-                    psi= psi + str(c[i]) + '*np.cos(T)**' + str(i) + '+'
-                    
-                
-            psi= '('+ psi + '0' + ')'
-            psi= '(np.sin(T)**abs(m)*'+psi+')'
-            psi= psi.replace('m',str(m))
-            sol= integrate.quad(lambda T: eval(psi),0,pi)
-            psi= psi+'/'+str(sol[0])
-            
-            
-        
-        Yml= '('+psi+')' + '*np.cos(abs(m)*P)'
-        Yml= Yml.replace('m',str(m))
-        
-        theta, phi = np.linspace(0, np.pi, 100), np.linspace(0, 2*np.pi, 100)
+                    c.append(((i + abs(m)) * (i + abs(m) + 1) - l * (l + 1)) * c[i] / ((i + 1) * (i + 2)))
+                    psi = psi + str(c[i]) + '*np.cos(T)**' + str(i) + '+'
+
+            psi = '(' + psi + '0' + ')'
+            psi = '(np.sin(T)**abs(m)*' + psi + ')'
+            psi = psi.replace('m', str(m))
+            sol = quad(lambda T: eval(psi), 0, pi)
+            psi = psi + '/' + str(sol[0])
+
+        Yml = '(' + psi + ')' + '*np.cos(abs(m)*P)'
+        Yml = Yml.replace('m', str(m))
+
+        theta, phi = np.linspace(0, np.pi, 100), np.linspace(0, 2 * np.pi, 100)
         T, P = np.meshgrid(theta, phi)
-        R = abs(eval(Yml)) #NotSoSure
+
+        R = abs(eval(Yml))  # NotSoSure
         X = R * np.sin(T) * np.cos(P)
         Y = R * np.sin(T) * np.sin(P)
         Z = R * np.cos(T)
+
         fig = plt.figure()
         ax = fig.add_subplot(projection='3d')
-        plt.title(r'$Y_m^l(θ,φ)$'+' l= '+ str(l)+ '; m= '+str(m))
-        
-        
+        # plt.title(r'$Y_m^l(\tetha,\phi)$'+' l= '+ str(l)+ '; m= '+str(m))
+        plt.title(r'$Y_m^l(\theta,\phi)' + '\ \ \ \ l= ' + str(l) + ';\ m= ' + str(m) + '$')
+
         import matplotlib.colors as mcolors
-        
+
         cmap = plt.get_cmap('viridis_r')
         norm = mcolors.Normalize(vmin=Z.min(), vmax=Z.max())
-        plot = ax.plot_surface(
-            X, Y, Z, rstride=1, cstride=1, 
+        ax.plot_surface(
+            X, Y, Z, rstride=1, cstride=1,
             facecolors=cmap(norm(Z)),
             linewidth=0, antialiased=False, alpha=0.5)
-        
-        plt.savefig('src/imgpython/momanPlot.png', dpi=300)
-        
-        Yml_string= Yml.replace('np.cos','cos')
-        Yml_string= Yml_string.replace('T','θ')
-        Yml_string= Yml_string.replace('P','φ')
-        Yml_string= Yml_string.replace('np.sin','sin')
-        Yml_string= Yml_string.replace('**','^')
-        Yml_string= Yml_string.replace('**1','')
-        Yml_string= Yml_string.replace('+0','')
-        Yml_string= Yml_string.replace('+-','-')
-        Yml_string= Yml_string.replace('abs({})'.format(str(m)),'[{}]'.format(str(m)))
-        Yml_string= Yml_string + '^2'
-    
-    return Yml_string
-        
-        
-#print(moman(2,1))
 
-eel.start('moman.html', port=8050)
-        
-        
-        
+        T = Symbol('T')
+        P = Symbol('P')
+
+        Yml_string = Yml.replace('np.cos', 'cos')
+        Yml_string = Yml_string.replace('np.sin', 'sin')
+        Yml_string = Yml_string.replace('abs({})'.format(str(m)), '({})'.format(str(m)))
+        Yml_string = '(' + Yml_string + ')^2'
+        Yml_string = str(latex(simplify(Yml_string)))
+        Yml_string = Yml_string.replace('T', r'\theta')
+        Yml_string = Yml_string.replace('P', r'\phi')
+        plt.title('$' + Yml_string + '$') #+ '\ \ \ \ l= ' + str(l) + ';\ m= ' + str(m) + '$')
+        plt.show()
+    return Yml_string
+
