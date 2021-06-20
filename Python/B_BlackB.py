@@ -51,8 +51,10 @@ def cn1(T):
 
 def cn2(lmax):
 
-    lmax=float(lmax)
-    f= float(f)
+    nm= 10**-9
+
+    lmax=float(lmax)*nm
+    f= lmax
     
     if lmax=='':
         lmax= c/f
@@ -63,7 +65,7 @@ def cn2(lmax):
         d = (8*pi*h*c)/(l**5*(e**(h*c/(l*kb*T)-1)))
         return d
     
-    nm= 10**-9
+    
     
     vec_f = np.vectorize(graf1)
     l= np.arange(100*nm,20000*nm,10*nm)

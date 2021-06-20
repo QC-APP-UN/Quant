@@ -55,10 +55,8 @@ def cArmonico1D(v,a,f):
         vec_psi = np.vectorize(psiAr)
         x= np.arange(-0.01/l,0.01/l,.00001)
         y= vec_psi(x,a)
-        plt.close('all')
-        plt.clf()
         plt.plot(x,y)
-        plt.savefig('src/imgpython/osarPlot.png',dpi=300)
+        plt.show()
         
     if (-1)**(v)==-1:
         
@@ -85,10 +83,8 @@ def cArmonico1D(v,a,f):
         vec_psi = np.vectorize(psiAr)
         x= np.arange(-0.01/l,0.01/l,.00001)
         y= vec_psi(x,a)
-        plt.close('all')
-        plt.clf()
         plt.plot(x,y)
-        plt.savefig('src/imgpython/osarPlot.png',dpi=300)
+        plt.show()
         
 
 #Función Interna (No usar @eel.expose)
@@ -188,7 +184,7 @@ def cArmonico2D(v1,v2,a,f):
         ax.set_zlabel(r'$\mathrm{\psi}$');
         ax.view_init(40, 35)
         ax.set_title(r'$\mathrm{\psi(x,y)}$');        
-        plt.savefig('src/imgpython/osarPlot.png')
+        plt.show()
         
     if (-1)**(v1)==-1:
         
@@ -279,7 +275,7 @@ def cArmonico2D(v1,v2,a,f):
         ax.set_zlabel(r'$\mathrm{\psi}$');
         ax.view_init(40, 35)
         ax.set_title(r'$\mathrm{\psi(x,y)}$'); 
-        plt.savefig('src/imgpython/osarPlot.png')
+        plt.show()
 
 def osar(d,f,m,v1,v2):
 
@@ -302,7 +298,7 @@ def osar(d,f,m,v1,v2):
     if d==2:
         cArmonico2D(v1,v2,a,f)
         
-osar(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+#osar(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
 
 
         

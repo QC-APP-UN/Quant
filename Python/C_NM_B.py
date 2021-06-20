@@ -106,7 +106,7 @@ def numerovN2(n,E1,E2,xi,xf):
         plt.clf()
         plt.plot(x,p)   
         plt.title('Er='+str(E))
-        plt.savefig("src/imgpython/potnPlot.png", dpi=300) 
+        plt.show()
     
     """-------------------------------------------------------------------------"""
     
@@ -142,4 +142,4 @@ def numerovN2(n,E1,E2,xi,xf):
 #El truco puede estar en usar los límites como condición para decidir si es
 #o no un buen valor de energía.
 
-numerovN2(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+#numerovN2(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])

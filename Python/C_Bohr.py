@@ -45,7 +45,6 @@ def BSorbit(n,k,Z):
         plt.ylim(-lim,lim)
         plt.plot(x,y,label=('n='+ str(n)+' '+ 'm='+ str(k)))
         plt.legend(loc='upper left')
-        
         plt.show()
 
-BSorbit((sys.argv[1]), (sys.argv[2]), (sys.argv[3]))
+#BSorbit((sys.argv[1]), (sys.argv[2]), (sys.argv[3]))

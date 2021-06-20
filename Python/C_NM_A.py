@@ -112,12 +112,9 @@ def numerovN2(k,E1,E2):
             x.append(x[i]+s)
             g.append(2*V(x[i+1])-2*E)
             p.append((-p[i-1]+2*p[i]+10*g[i]*p[i]*s2+g[i-1]*p[i-1]*s2)/(1-g[i+1]*s2))
-        
-        plt.close('all')
-        plt.clf()
         plt.plot(x,p)   
         plt.title('Er='+str(E))
-        plt.savefig("src/imgpython/pot2Plot.png", dpi=300)
+        plt.show()
     
     """-------------------------------------------------------------------------"""
     
@@ -152,5 +149,5 @@ def numerovN2(k,E1,E2):
 
 """-------------------------------------------------------------------------"""  
 
-numerovN2(sys.argv[1],sys.argv[2],sys.argv[3])
+#numerovN2(sys.argv[1],sys.argv[2],sys.argv[3])
 

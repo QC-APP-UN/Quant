@@ -54,9 +54,6 @@ def fCaja(d,n1,n2,n3,L1,L2,L3,M):
 
         X, Y = np.meshgrid(x, y)
         Z = psi(X, Y)
-        
-        plt.close('all')
-        plt.clf()
         fig = plt.figure()
         ax = plt.axes(projection='3d')
         ax.contour3D(X, Y, Z, 50, cmap='viridis', edgecolor='none')
@@ -82,9 +79,6 @@ def fCaja(d,n1,n2,n3,L1,L2,L3,M):
             ax.set_zlabel(r'$\mathrm{\psi(x,y)}$')
             line= ax.contour3D(x, y, z, 50, cmap='viridis', edgecolor='none')
             return line
-
-        plt.close('all')
-        plt.clf()
         fig = plt.figure()
         ax = fig.add_subplot(projection='3d')
             
@@ -96,9 +90,10 @@ def fCaja(d,n1,n2,n3,L1,L2,L3,M):
 
         ani = animation.FuncAnimation(fig, psiZ, fargs=(z, line), interval=50, blit=False)
             
-        ani.save('src/imgpython/cajaPlot.gif', dpi=300)
+        ani.save('cajaPlot.gif', dpi=300)
+        plt.show()
         
-fCaja(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8]) #d,n1,n2,n3,L1,L2,L3,M
+#fCaja(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8]) #d,n1,n2,n3,L1,L2,L3,M
 
 #seems to work fine, times reported in data i have
 #check again when plots are defined for the project 

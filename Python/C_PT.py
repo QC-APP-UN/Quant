@@ -327,5 +327,3 @@ def perturOs(v,a,per,li,ls):
 
 
 # print(perturOs(0,1,per,'-inf','inf'))
-
-eel.start('pertur.html', port=8100)

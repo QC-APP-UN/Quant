@@ -111,7 +111,7 @@ def moman(l,m):
             facecolors=cmap(norm(Z)),
             linewidth=0, antialiased=False, alpha=0.5)
         
-        plt.savefig("src/imgpython/hidPlot2.png", dpi=300)
+        plt.show()
         
 def hid(n,l,m,Z):
 
@@ -150,8 +150,6 @@ def hid(n,l,m,Z):
         psin=eval(psi)/sol[0]
         return psin
     
-    plt.close('all')
-    plt.clf()
     fig = plt.figure()
     
     ax1 = fig.add_subplot(121)
@@ -179,12 +177,9 @@ def hid(n,l,m,Z):
     ax.set_zlabel(r'$\mathrm{\psi}$');
     ax.view_init(40, 35)
     ax.set_title(r'$\mathrm{\Psi_R(x,y)}$');
-    
-
-    plt.savefig("src/imgpython/hidPlot1.png", dpi=300)
-
+    plt.show()
     moman(l,m)
         
     
     
-hid(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+#hid(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
