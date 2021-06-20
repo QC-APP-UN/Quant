@@ -71,7 +71,7 @@ public class B_Norm extends javax.swing.JFrame {
                 .addComponent(B001_T_1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(B001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         B001_TPLayout.setVerticalGroup(
             B001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +112,7 @@ public class B_Norm extends javax.swing.JFrame {
         );
 
         B001_TF_1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        B001_TF_1.setText("﻿e**-( ((x-1)**2) /2)");
+        B001_TF_1.setText("e**-( ((x-1)**2) /2)");
         B001_TF_1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         B001_TF_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,47 +183,21 @@ public class B_Norm extends javax.swing.JFrame {
     }//GEN-LAST:event_B001_TF_1ActionPerformed
 
     private void B001_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B001_B_1ActionPerformed
-        try {
-            
-            String[] pathArray = new String[4];
+       
+            String[] pathArray = new String[3];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "B_Norm";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
-            
-            String path = "";
-            
-            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
-            
-            System.out.println(pathArray.length); //Only in develop
-            
+            pathArray[2] = B001_TF_1.getText().replaceAll("\\s","");
             //------------------------------------------------------
-                        
-            
-            Process p = Runtime.getRuntime().exec(path);
-            
-            String stdin = null;
-            String stderr = null;
-            
-            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+                 
+            PythonProcess pythonProcess = new PythonProcess(pathArray);
+            Thread thread = new Thread(pythonProcess);
+            thread.start();
             
             
-            while((stdin=in.readLine())!=null){
-                System.out.println(in);
-            }
-            
-            while((stderr=err.readLine())!=null){
-                System.out.println(err);
-            }
-            
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
     }//GEN-LAST:event_B001_B_1ActionPerformed
 
     /**

@@ -3,48 +3,36 @@
 
 import sys
 import C_AM as am
-#import B_Norm as norm
-#import wave_animation as w_a
-#import orthogonality as ortho
-#import B_Box as box
-#import B_Boxc as boxc
-#import B_BlackB as blackb
-#import C_HLA as hla
-#import C_PT as pert
-#import C_NM_A as nmpot2
-#import C_NM_B as nmpotn
+import B_Norm as norm
+import B_BlackB as bblack
 
-def C_AM(l, m):
-    am.angular_momentum(l, m)
+def B_Norm():
+    if len(sys.argv) == 3:
+        print(norm.gNormalize(sys.argv[2]))
+    #else:
+        #raise NameError('B_Norm: Missing argument')
 
+def B_BlackB_1():
+    if len(sys.argv) == 3:
+        bblack.cn1(sys.argv[2])
 
-#def C_Norm():
-    
+def B_BlackB_2():
+    if len(sys.argv) == 3:
+        bblack.cn2(sys.argv[2])
 
-    
-#def wave_animation():
-
-#def orthogonality():
-
-#def B_Box():
-
-#def B_BlackB1():
-
-#def B_BlackB2():
-
-#def C_HLA():
-
-#def C_PT():
-
-#def C_NM_A():
-
-#def C_NM_B():
-
+def C_AM():
+    if len(sys.argv) == 4:
+        print(am.angular_momentum(sys.argv[2], sys.argv[3]))
+    #else:
+        #raise NameError('C_AM: Missing argument')
 
 
 def function(argument):
     switcher = {
-        C_AM: C_AM(sys.argv[2], sys.argv[3])
+        C_AM: C_AM(),
+        B_BlackB_1: B_BlackB_1(),
+        B_Norm: B_Norm(),
+        B_BlackB_2: B_BlackB_2()
     }
     func = switcher.get(argument, lambda: "Undefined Function")
     func()

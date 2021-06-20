@@ -12,8 +12,6 @@ import math
 from matplotlib import pyplot as plt
 from scipy import integrate
 from mpl_toolkits import mplot3d
-import sys
-
 import decimal
 decimal.getcontext().prec = 100
 
@@ -49,9 +47,9 @@ def cn1(T):
     plt.ylabel(r'$ \rho (\lambda) $')
     plt.xlabel(r'$\lambda (m)$')
     plt.annotate(r'Máximo $\lambda_Tmax =${}'.format(lmax), xy = (lmax, graf1(lmax)), xycoords = 'data', xytext = (lmax+2000*nm, graf1(lmax)), textcoords = 'data', arrowprops = dict(arrowstyle = "->"))
-    plt.savefig("src/imgpython/cn1Plot.png", dpi=300)
+    plt.show()
 
-def cn2(lmax, f):
+def cn2(lmax):
 
     lmax=float(lmax)
     f= float(f)
@@ -70,14 +68,12 @@ def cn2(lmax, f):
     vec_f = np.vectorize(graf1)
     l= np.arange(100*nm,20000*nm,10*nm)
     ro= vec_f(l)
-    plt.close('all')
-    plt.clf()
     plt.plot(l,ro)
     plt.title('T={}'.format(T))
     plt.ylabel(r'$ \rho (\lambda) $')
     plt.xlabel(r'$\lambda (m)$')
     plt.annotate(r'Máximo $\lambda_Tmax =${}'.format(lmax), xy = (lmax, graf1(lmax)), xycoords = 'data', xytext = (lmax+2000*nm, graf1(lmax)), textcoords = 'data', arrowprops = dict(arrowstyle = "->"))
-    plt.savefig("src/imgpython/cn2Plot.png", dpi=300)
+    plt.show()
 
 # cn1(sys.argv[1]) #T
 #cn2(sys.argv[1], sys.argv[1]) # lmax

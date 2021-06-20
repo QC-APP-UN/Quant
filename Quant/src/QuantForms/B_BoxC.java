@@ -293,8 +293,7 @@ public class B_BoxC extends javax.swing.JFrame {
     }//GEN-LAST:event_B004_TF_5ActionPerformed
 
     private void B004_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B004_B_1ActionPerformed
-        try {
-            
+                    
             String[] pathArray = new String[4];
             
             
@@ -303,39 +302,13 @@ public class B_BoxC extends javax.swing.JFrame {
             pathArray[1] = "B_BoxC";
             pathArray[2] = "5";
             pathArray[3] = "3";
-            
-            String path = "";
-            
-            for(int i=0;i<pathArray.length;i++) path+=" "+pathArray[i];
-            
-            System.out.println(pathArray.length); //Only in develop
-            
             //------------------------------------------------------
                         
             
-            Process p = Runtime.getRuntime().exec(path);
-            
-            String stdin = null;
-            String stderr = null;
-            
-            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            
-            
-            while((stdin=in.readLine())!=null){
-                System.out.println(in);
-            }
-            
-            while((stderr=err.readLine())!=null){
-                System.out.println(err);
-            }
-            
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        } 
+            PythonProcess pythonProcess = new PythonProcess(pathArray);
+            Thread thread = new Thread(pythonProcess);
+            thread.start();
                                             
-
     }//GEN-LAST:event_B004_B_1ActionPerformed
 
     /**

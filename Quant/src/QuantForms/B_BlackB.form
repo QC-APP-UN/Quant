@@ -225,7 +225,7 @@
                           <Component id="B002A_SB_1" min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="B002A_L_3" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="122" max="32767" attributes="0"/>
+                      <EmptySpace pref="378" max="32767" attributes="0"/>
                       <Component id="B002A_B_1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
@@ -305,7 +305,7 @@
                               <Component id="B002B_L_2" min="-2" pref="37" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="B002B_SB_1" min="-2" pref="137" max="-2" attributes="0"/>
-                              <EmptySpace pref="10" max="32767" attributes="0"/>
+                              <EmptySpace pref="155" max="32767" attributes="0"/>
                               <Component id="B002B_L_3" min="-2" pref="73" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -316,7 +316,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                      <EmptySpace pref="299" max="32767" attributes="0"/>
                       <Component id="B002B_L_1" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
