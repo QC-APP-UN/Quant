@@ -38,7 +38,7 @@ User Functions
 """
 
 def basis(string):
-    coef = list(string.split())
+    coef = list(string.split('#'))
     
     for x in coef:
         x= float(x)
@@ -231,4 +231,4 @@ def BS_H(b1,b2,UdBS_D,UdBS_A):
     plt.show()
         
     
-#BS_H('STO-1G','STO-2G',"0 0","0 0")
+BS_H('STO-1G','STO-2G',"0#0","0#0")

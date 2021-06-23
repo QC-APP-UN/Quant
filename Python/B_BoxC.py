@@ -22,8 +22,8 @@ def anonda(n1,n2,c1,c2):
     
     n1= float(n1)
     n2= float(n2)
-    c1= float(c1)
-    c2= float(c2)
+    c1= float(c1)/100
+    c2= float(c2)/100
 
     # plt.close('all')
     # plt.clf()
@@ -55,6 +55,8 @@ def anonda(n1,n2,c1,c2):
     y = N2*(cn1*((p1(x))**2) + cn2*((p2(x))**2) + np.cos((E2-E1)*(2*pi)*0)*p1(x)*p2(x)) 
     fig = plt.figure()
     line, = plt.plot(x, y, lw=3)
+    #yls = cn1*cn2*20
+    #plt.ylim(0,yls)
     plt.xlabel('x')
     plt.ylabel(r'$|\psi(x)|^2$')
     plt.title(r'$|\psi_r(x,t)|^2$')
@@ -73,9 +75,13 @@ def anonda(n1,n2,c1,c2):
         return line,
     
     anim = FuncAnimation(fig, animate, init_func=init,
-                                    frames=10, interval=1, blit=True)
-    anim.save('anondaPlot.gif', writer='imagemagick', dpi=300)
+                                    frames=200, interval=70, blit=False)
     plt.show()
+    
+    
+#anonda(1,3,20,10)
+   
+    
 inicio=time.time()    
 #anonda(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]) # n1, n2 != n1, c1, c2
 fin=time.time()

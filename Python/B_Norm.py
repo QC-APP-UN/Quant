@@ -23,8 +23,10 @@ def gNormalize(fun):
     vec_f = np.vectorize(f) 
     x= np.arange(-10,10,.1)
     y= vec_f(x)
-    plt.figure(figsize=(3,3)) 
+    plt.figure(figsize=(3,3))
+    plt.title('Normalization Constant: ' + str(nNormalize(fun)))
     plt.plot(x,y)  
     plt.show()
     return constant
 
+#gNormalize('e**(-x**2)')

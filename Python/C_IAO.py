@@ -19,7 +19,7 @@ hbar= 1.054571628*10**-34
 
 
     
-#Función Interna (No usar @eel.expose)
+
 def cArmonico1D(v,a,f):
 
     plt.close('all')
@@ -87,7 +87,7 @@ def cArmonico1D(v,a,f):
         plt.show()
         
 
-#Función Interna (No usar @eel.expose)
+
 def cArmonico2D(v1,v2,a,f):
 
     plt.close('all')
@@ -174,8 +174,7 @@ def cArmonico2D(v1,v2,a,f):
         X, Y = np.meshgrid(x, y)
         Z = vec_psi(X, Y,a)
         
-        plt.close('all')
-        plt.clf()
+
         fig = plt.figure()
         ax = plt.axes(projection='3d')
         ax.contour3D(X, Y, Z, 50, cmap='viridis', edgecolor='none')
@@ -277,17 +276,12 @@ def cArmonico2D(v1,v2,a,f):
         ax.set_title(r'$\mathrm{\psi(x,y)}$'); 
         plt.show()
 
-def osar(d,f,m,v1,v2):
+def osar(d,f,v1,v2):
 
     d=int(d)
-    if f == "hbar":
-        f=hbar
-    else:
-        f=float(f)
-    if m=='me':
-        m=float(9.10938291*10**(-31))
-    else:
-        m=float(m)
+
+    m=float(9.10938291*10**(-31))
+
 
     v1=int(v1)
     v2=int(v2)
@@ -300,5 +294,5 @@ def osar(d,f,m,v1,v2):
         
 #osar(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
 
-
+osar(2,500,2,2)
         
