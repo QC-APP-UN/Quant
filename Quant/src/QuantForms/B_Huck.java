@@ -178,14 +178,13 @@ public class B_Huck extends javax.swing.JFrame {
 
     private void B005_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B005_B_1ActionPerformed
         
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[3];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "B_Huck";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = B005_TF_1.getText();
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);

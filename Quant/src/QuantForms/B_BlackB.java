@@ -299,7 +299,7 @@ public class B_BlackB extends javax.swing.JFrame {
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "B_BlackB_1";
-            pathArray[2] = "5";
+            pathArray[2] = String.valueOf(B002B_SB_1.getValue()); 
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);

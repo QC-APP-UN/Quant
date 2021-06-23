@@ -470,14 +470,15 @@ public class C_NM extends javax.swing.JFrame {
 
     private void C001A_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_B_1ActionPerformed
                    
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[5];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "C_NM_1";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = C001A_TF_1.getText();
+            pathArray[3] = C001A_TF_2.getText();
+            pathArray[4] = C001A_TF_3.getText();
             //------------------------------------------------------
                         
             
@@ -488,14 +489,17 @@ public class C_NM extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[7];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "C_NM_2";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = "";
+            pathArray[3] = "";
+            pathArray[4] = "";
+            pathArray[5] = "";
+            pathArray[6] = "";
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);

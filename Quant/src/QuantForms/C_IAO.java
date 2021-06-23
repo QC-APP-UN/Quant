@@ -248,14 +248,17 @@ public class C_IAO extends javax.swing.JFrame {
 
     private void C002_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C002_B_1ActionPerformed
         
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[7];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "C_IAO";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = String.valueOf(C002_CB_1.getSelectedItem());
+            pathArray[3] = String.valueOf(C002_SL_1.getValue());
+            pathArray[4] = "1";
+            pathArray[5] = jTextField2.getText();
+            pathArray[6] = jTextField4.getText();
             //------------------------------------------------------
                         
             

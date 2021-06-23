@@ -238,14 +238,15 @@ public class C_Bohr extends javax.swing.JFrame {
 
     private void B006_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B006_B_1ActionPerformed
        
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[5];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "C_Bohr";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = B006_TF_1.getText();
+            pathArray[3] = B006_TF_2.getText();
+            pathArray[4] = B006_TF_3.getText();
             //------------------------------------------------------
                         
             

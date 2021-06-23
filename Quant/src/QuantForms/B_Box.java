@@ -290,14 +290,19 @@ public class B_Box extends javax.swing.JFrame {
 
     private void B003_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B003_B_1ActionPerformed
       
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[9];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "B_Box";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = String.valueOf(B003_CB_1.getSelectedItem());
+            pathArray[3] = B003_TF_1.getText();
+            pathArray[4] = B003_TF_3.getText();
+            pathArray[5] = B003_TF_5.getText();
+            pathArray[6] = B003_TF_2.getText();
+            pathArray[7] = B003_TF_4.getText();
+            pathArray[8] = B003_TF_6.getText();
             //------------------------------------------------------
                         
             

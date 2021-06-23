@@ -290,14 +290,16 @@ public class D_HFC extends javax.swing.JFrame {
 
     private void B006_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B006_B_1ActionPerformed
         
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[6];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "D_HFC";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = String.valueOf(D002_CB_1.getSelectedItem());
+           // pathArray[3] = .getText();
+            //pathArray[4] = .getText();
+            pathArray[5] = D002_TF_3.getText();
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);

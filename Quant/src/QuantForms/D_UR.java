@@ -328,14 +328,18 @@ public class D_UR extends javax.swing.JFrame {
 
     private void B006_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B006_B_1ActionPerformed
         
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[8];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "D_UR";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = D001_TF_1.getText();
+            pathArray[3] = D001_TF_2.getText();
+            pathArray[4] = D001_TF_3.getText();
+            pathArray[5] = D001_TF_4.getText();
+            pathArray[6] = D001_TF_5.getText();
+            pathArray[7] = D001_TF_6.getText();
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);

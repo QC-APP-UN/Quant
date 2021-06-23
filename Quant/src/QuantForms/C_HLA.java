@@ -262,14 +262,16 @@ public class C_HLA extends javax.swing.JFrame {
 
     private void C004_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C004_B_1ActionPerformed
                   
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[6];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "C_HLA";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = jTextField4.getText();
+            pathArray[3] = jTextField6.getText();
+            pathArray[4] = jTextField5.getText();
+            pathArray[5] = jTextField2.getText();
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);
