@@ -132,7 +132,7 @@ def perturCaja(L,n,per,li,ls):
 #Función Interna
 def cArmonico(v,a):
 
-    plt.close('all')
+    plt.close('all') 
     plt.clf()
     
     if (-1)**(v)==1:
