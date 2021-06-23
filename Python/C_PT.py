@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Nov 20 17:43:35 2020
-
 @author: davidarchilapena
 """
 
@@ -85,14 +84,26 @@ def perturCaja(L,n,per,li,ls):
             Em= (2*pi)**2*m**2/8
             suma= suma+ sol[0]/(En-Em)
         
-    plt.close('all')
-    plt.clf()
+    
+    ###########
+    # Ploting #
+    ###########
+    
+
     fig, ax = plt.subplots()
 
     t = np.arange(0.0, L, 0.001)
     initial_amp = 0
-    s = (2/L)**(1/2)*np.sin(pi*t*m/L)
-    l, = plt.plot(t, s, lw=2)
+    
+    print(suma)
+    def S(t,val):
+        N= 1/(1+val*suma)
+        s= (1/N)*((2/L)**(1/2)*np.sin(pi*t*n/L)+val*suma*(2/L)**(1/2)*np.sin(pi*t*n/L))
+        
+        return s
+    
+    
+    l, = plt.plot(t, S(t,0), lw=2)
     plt.title(r'$\psi_r (x)$ ; $E_r$ =' + str(En+E1) +" ; n="+str(n))
     # ax = plt.axis([0,L,-2,2])
     
@@ -100,49 +111,22 @@ def perturCaja(L,n,per,li,ls):
     # Slider
     samp = Slider(axamp, 'λ', 0, 1, valinit=initial_amp)
     
-    # Animation controls
-     # True if user has taken control of the animation
-    interval = 100 # ms, time between animation frames
-    loop_len = 5.0 # seconds per loop
-    scale = interval / 1000 / loop_len
     
-    def update_slider(val):
-        global is_manual
-        is_manual=True
-        update(val)
     
     def update(val):
-        # update curve
-        N= 1/(1+val*suma)
-        l.set_ydata((1/N)*((2/L)**(1/2)*np.sin(pi*t*n/L)+val*suma*(2/L)**(1/2)*np.sin(pi*t*n/L)))
-        # redraw canvas while idle
+        val= samp.val
+        l.set_ydata(S(t,val))
         fig.canvas.draw_idle()
-    
-    def update_plot(num):
-        global is_manual
-        if is_manual:
-            return l, # don't change
-    
-        val = (samp.val + scale) % samp.valmax
-        samp.set_val(val)
-        is_manual = False # the above line called update_slider, so we need to reset this
         return l,
-    
-    
-    
+
     # call update function on slider value change
-    samp.on_changed(update_slider)
+    samp.on_changed(update)
     
-    ani = animation.FuncAnimation(fig, update_plot, interval=interval)
-    
-    my_writer=animation.PillowWriter(fps=20, codec='libx264', bitrate=2)
-    
-    ani.save("src/imgpython/perturPlot.gif", writer=my_writer, dpi=300)
-    
+    plt.show()    
 
 
 
-#print(perturCaja(L,n,per,'0','0.5*L'))
+#perturCaja(1,1,'e**x**3','0','0.5*L')
 
 
 #Función Interna
@@ -200,7 +184,7 @@ def cArmonico(v,a):
     return psi
 
 
-@eel.expose
+
 def perturEOs(v,a,per,li,ls):
     
     v=int(v)
@@ -219,7 +203,7 @@ def perturEOs(v,a,per,li,ls):
     return E1
 
 
-@eel.expose
+
 def perturOs(v,a,per,li,ls):
 
     plt.close('all')
@@ -264,16 +248,25 @@ def perturOs(v,a,per,li,ls):
     print(psi0graf)
     
     Ev= v + 0.5
+    
+    ###########
+    # Ploting #
+    ###########
 
     plt.close('all')
     plt.clf()
     fig, ax = plt.subplots()
-
+    
+    def S(t,val):
+        N= 1/(1+val*suma)
+        return (1/N)*(eval(psi0graf)+val*suma*eval(psi0graf))
+    
+    
     t = np.arange(-10, 10, 0.001)
     initial_amp = 0
-    N= 1/(1+1*suma)
-    s=(1/N)*(eval(psi0graf)+1*suma*eval(psi0graf))
-    l, = plt.plot(t, s, lw=2)
+    
+    
+    l, = plt.plot(t, S(t,0), lw=2)
     plt.title(r'$\psi_r (x)$ ; $E_r$ =' + str(Ev+E1) +" ; v="+str(v))
     # ax = plt.axis([-10,10,-5,5])
     
@@ -282,48 +275,21 @@ def perturOs(v,a,per,li,ls):
     # Slider
     samp = Slider(axamp, 'λ', 0, 1, valinit=initial_amp)
     
-    # Animation controls
-      # True if user has taken control of the animation
-    interval = 100 # ms, time between animation frames
-    loop_len = 5.0 # seconds per loop
-    scale = interval / 1000 / loop_len
     
-    def update_slider(val):
-        global is_manual
-        is_manual=True
-        update(val)
-    
-    def update(val):
-        # update curve
-        t = np.arange(-10, 10, 0.001)
-        N= 1/(1+val*suma)
-        s=(1/N)*(eval(psi0graf)+val*suma*eval(psi0graf))
-        l.set_ydata(s)
-        # redraw canvas while idle
-        fig.canvas.draw_idle()
-    
-    def update_plot(num):
+    def update(vale):
         global is_manual
         if is_manual:
             return l, # don't change
     
-        val = (samp.val + scale) % samp.valmax
-        samp.set_val(val)
-        is_manual = False # the above line called update_slider, so we need to reset this
+        val = samp.val 
+        l.set_ydata(S(t,val))
         return l,
     
     
     
     # call update function on slider value change
-    samp.on_changed(update_slider)
+    samp.on_changed(update)
     
-    ani = animation.FuncAnimation(fig, update_plot, interval=interval)
-    
-    my_writer=animation.PillowWriter(fps=20, codec='libx264', bitrate=2)
-    
-    ani.save("src/imgpython/perturPlot.gif", writer=my_writer, dpi=300)
+    plt.show()
         
-    return str(Ev+E1)
-
-
-# print(perturOs(0,1,per,'-inf','inf'))
+perturOs(1,1,'x**2','-inf','inf')
