@@ -66,7 +66,7 @@ public class D_HFC extends javax.swing.JFrame {
         D002_L_11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Basic HF Calculations");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -78,12 +78,12 @@ public class D_HFC extends javax.swing.JFrame {
         D002_T_1.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         D002_T_1.setForeground(new java.awt.Color(255, 255, 255));
         D002_T_1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        D002_T_1.setText("BS Comparison");
+        D002_T_1.setText("HF Basic");
 
         D002_T_3.setFont(new java.awt.Font("Baskerville", 0, 14)); // NOI18N
         D002_T_3.setForeground(new java.awt.Color(255, 255, 255));
         D002_T_3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        D002_T_3.setText("Type S Basis Sets");
+        D002_T_3.setText("H2 Calculations");
 
         javax.swing.GroupLayout C003_T_3Layout = new javax.swing.GroupLayout(C003_T_3);
         C003_T_3.setLayout(C003_T_3Layout);
@@ -97,9 +97,7 @@ public class D_HFC extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(D002_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(C003_T_3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(D002_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(D002_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         C003_T_3Layout.setVerticalGroup(
@@ -149,7 +147,7 @@ public class D_HFC extends javax.swing.JFrame {
 
         D002_L_1.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         D002_L_1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        D002_L_1.setText("Select the basis sets to compare.");
+        D002_L_1.setText("Select the basis set.");
         D002_L_1.setToolTipText("");
 
         B006_B_1.setText("Run!");
@@ -181,14 +179,14 @@ public class D_HFC extends javax.swing.JFrame {
         D002_L_8.setText("D (Bohrs)");
         D002_L_8.setToolTipText("");
 
-        D002_TF_1.setText("0 0 0");
+        D002_TF_1.setText("0#0#0");
         D002_TF_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 D002_TF_1ActionPerformed(evt);
             }
         });
 
-        D002_TF_2.setText("0 0 0");
+        D002_TF_2.setText("0#0#0");
         D002_TF_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 D002_TF_2ActionPerformed(evt);

@@ -55,7 +55,7 @@ public class B_Huck extends javax.swing.JFrame {
         B005_B_1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Huckel Simplified Method");
 
         B001_TP.setBackground(new java.awt.Color(0, 153, 153));
 

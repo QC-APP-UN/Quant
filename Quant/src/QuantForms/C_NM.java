@@ -91,7 +91,7 @@ public class C_NM extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Numerov Method");
 
         C001_TP.setBackground(new java.awt.Color(0, 153, 153));
 

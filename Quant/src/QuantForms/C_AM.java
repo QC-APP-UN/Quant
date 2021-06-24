@@ -56,7 +56,7 @@ public class C_AM extends javax.swing.JFrame {
         C002_TF_2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Angular Momemtum");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
 

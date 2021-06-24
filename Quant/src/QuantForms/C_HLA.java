@@ -63,7 +63,7 @@ public class C_HLA extends javax.swing.JFrame {
         Close1.setText("Close");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Hidrogen-Like Atom");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 

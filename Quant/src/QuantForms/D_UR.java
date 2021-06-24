@@ -66,7 +66,7 @@ public class D_UR extends javax.swing.JFrame {
         D001_TF_6 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("The Morse U(R) Curve");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
 

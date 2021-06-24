@@ -63,7 +63,7 @@ public class B_BlackB extends javax.swing.JFrame {
         B002B_B_1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Black Body");
 
         B001_TP.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -103,8 +103,6 @@ public class B_BlackB extends javax.swing.JFrame {
                 .addComponent(B002_T_2)
                 .addGap(36, 36, 36))
         );
-
-        B002_T_4.getAccessibleContext().setAccessibleName("");
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 

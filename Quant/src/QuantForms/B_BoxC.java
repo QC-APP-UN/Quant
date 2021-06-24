@@ -67,7 +67,7 @@ public class B_BoxC extends javax.swing.JFrame {
         B004_TF_5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Particle in a Box : Linear Combinations");
 
         B004_TP.setBackground(new java.awt.Color(0, 153, 153));
 

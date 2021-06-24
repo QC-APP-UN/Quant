@@ -63,7 +63,7 @@ public class D_HFMP2 extends javax.swing.JFrame {
         D001_L_3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("HF vs MP2 Basic");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
 

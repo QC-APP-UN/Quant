@@ -59,7 +59,7 @@ public class C_Bohr extends javax.swing.JFrame {
         B006_TF_3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Function Normalizator");
+        setTitle("Bohr SommerFeld Orbits");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
 
