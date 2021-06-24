@@ -29,6 +29,12 @@ def monoExp(x, m, t, b):
 
 def CBS(E2,E3,E4,E5,E6):
     
+    E2=float(E2)
+    E3=float(E3)
+    E4=float(E4)
+    E5=float(E5)
+    E6=float(E6)
+    
     x= np.linspace(0,6,50)
     xs=np.array([2,3,4,5,6])
     ys= np.array([E2,E3,E4,E5,E6])

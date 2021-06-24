@@ -166,9 +166,9 @@ def D_UR():
         
 def D_CBS():
     print(len(sys.argv))
-    if len(sys.argv) == 8:
+    if len(sys.argv) == 7:
         print("D_UR")
-        cbs.CBS(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7])
+        cbs.CBS(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
     else:
         raise NameError('D_UR: Missing argument')
 
