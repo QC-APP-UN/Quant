@@ -177,6 +177,7 @@
                                   <Component id="LogNorm" min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="LogBox" min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="LogBlackB" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="LogBoxC" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
@@ -208,7 +209,10 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jButton5" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jButton1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="LogBoxC" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="LogNorm" min="-2" pref="50" max="-2" attributes="0"/>
@@ -217,14 +221,14 @@
                           </Group>
                       </Group>
                       <EmptySpace pref="7" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton16" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="LogHuck" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="jButton16" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton4" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="LogOrbs" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="jButton4" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
@@ -296,6 +300,8 @@
             <Component class="javax.swing.JLabel" name="LogHuck">
             </Component>
             <Component class="javax.swing.JLabel" name="LogOrbs">
+            </Component>
+            <Component class="javax.swing.JLabel" name="LogBoxC">
             </Component>
           </SubComponents>
         </Container>
@@ -408,14 +414,8 @@
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="LogNum">
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JLabel" name="LogIAO">
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JLabel" name="LogAM">
             </Component>
@@ -444,6 +444,7 @@
                           <Component id="LogBS" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="LogHFM" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="LogHF" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="LogCBS" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -471,7 +472,10 @@
                           <Component id="LogBS" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" pref="53" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButton8" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="LogCBS" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jButton9" min="-2" pref="53" max="-2" attributes="0"/>
@@ -507,7 +511,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Johanna&apos;s"/>
+                <Property name="text" type="java.lang.String" value="CBS Extrapolation"/>
                 <Property name="actionCommand" type="java.lang.String" value=""/>
               </Properties>
               <Events>
@@ -540,6 +544,8 @@
             <Component class="javax.swing.JLabel" name="LogHFM">
             </Component>
             <Component class="javax.swing.JLabel" name="LogHF">
+            </Component>
+            <Component class="javax.swing.JLabel" name="LogCBS">
             </Component>
           </SubComponents>
         </Container>

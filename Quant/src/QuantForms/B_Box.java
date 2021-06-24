@@ -5,9 +5,12 @@
  */
 package QuantForms;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,12 @@ public class B_Box extends javax.swing.JFrame {
     public B_Box() {
         initComponents();
         setResizable(false);
+        
+        ImageIcon LogoBox = new ImageIcon(getClass().getResource("../Images/LogBox.png"));
+        Icon IconBox = new ImageIcon(LogoBox.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+        B003_T_2.setIcon(IconBox);
+        
+        this.repaint();
     }
 
     /**
@@ -38,6 +47,7 @@ public class B_Box extends javax.swing.JFrame {
         B003_T_4 = new javax.swing.JLabel();
         B003_CP = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        Close = new javax.swing.JButton();
         B003_L_1 = new javax.swing.JLabel();
         B003_CB_1 = new javax.swing.JComboBox<>();
         B003_L_2 = new javax.swing.JLabel();
@@ -57,8 +67,6 @@ public class B_Box extends javax.swing.JFrame {
 
         B003_TP.setBackground(new java.awt.Color(0, 153, 153));
 
-        B003_T_2.setText("Logo");
-
         B003_T_3.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
         B003_T_3.setForeground(new java.awt.Color(255, 255, 255));
         B003_T_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,9 +82,9 @@ public class B_Box extends javax.swing.JFrame {
         B003_TPLayout.setHorizontalGroup(
             B003_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(B003_TPLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(B003_T_2)
-                .addGap(37, 37, 37)
+                .addGap(45, 45, 45)
+                .addComponent(B003_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(B003_T_3)
                 .addGap(18, 18, 18)
                 .addComponent(B003_T_4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -86,13 +94,15 @@ public class B_Box extends javax.swing.JFrame {
             B003_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(B003_TPLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addComponent(B003_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(B003_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(B003_TPLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(B003_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(B003_T_4)
-                    .addComponent(B003_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(B003_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(B003_TPLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(B003_T_4)))
                 .addGap(0, 20, Short.MAX_VALUE))
         );
 
@@ -102,6 +112,13 @@ public class B_Box extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("© QUANT 2020");
 
+        Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout B003_CPLayout = new javax.swing.GroupLayout(B003_CP);
         B003_CP.setLayout(B003_CPLayout);
         B003_CPLayout.setHorizontalGroup(
@@ -109,13 +126,17 @@ public class B_Box extends javax.swing.JFrame {
             .addGroup(B003_CPLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Close)
+                .addContainerGap())
         );
         B003_CPLayout.setVerticalGroup(
             B003_CPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, B003_CPLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(B003_CPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Close)))
         );
 
         B003_L_1.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
@@ -311,6 +332,10 @@ public class B_Box extends javax.swing.JFrame {
             thread.start();
     }//GEN-LAST:event_B003_B_1ActionPerformed
 
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        dispose();
+    }//GEN-LAST:event_CloseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -343,6 +368,7 @@ public class B_Box extends javax.swing.JFrame {
     private javax.swing.JLabel B003_T_2;
     private javax.swing.JLabel B003_T_3;
     private javax.swing.JLabel B003_T_4;
+    private javax.swing.JButton Close;
     private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

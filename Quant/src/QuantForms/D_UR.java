@@ -5,9 +5,12 @@
  */
 package QuantForms;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,12 @@ public class D_UR extends javax.swing.JFrame {
     public D_UR() {
         initComponents();
         setResizable(false);
+        
+        ImageIcon LogoUR = new ImageIcon(getClass().getResource("../Images/LogUR.png"));
+        Icon IconUR = new ImageIcon(LogoUR.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+        C003_T_1.setIcon(IconUR);
+        
+        this.repaint();
     }
 
     /**
@@ -39,6 +48,7 @@ public class D_UR extends javax.swing.JFrame {
         D001_T_3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        Close = new javax.swing.JButton();
         D001_L_1 = new javax.swing.JLabel();
         B006_B_1 = new javax.swing.JButton();
         D001_L_7 = new javax.swing.JLabel();
@@ -59,8 +69,6 @@ public class D_UR extends javax.swing.JFrame {
         setTitle("Function Normalizator");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
-
-        C003_T_1.setText("Logo");
 
         D001_T_2.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
         D001_T_2.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,7 +91,7 @@ public class D_UR extends javax.swing.JFrame {
             C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C003_T_3Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(C003_T_1)
+                .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(D001_T_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -99,7 +107,7 @@ public class D_UR extends javax.swing.JFrame {
             .addGroup(C003_T_3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(D001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(D001_T_3))
@@ -113,6 +121,13 @@ public class D_UR extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("© QUANT 2020");
 
+        Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -120,13 +135,16 @@ public class D_UR extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Close))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Close)))
         );
 
         D001_L_1.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
@@ -346,6 +364,10 @@ public class D_UR extends javax.swing.JFrame {
             Thread thread = new Thread(pythonProcess);
             thread.start();
     }//GEN-LAST:event_B006_B_1ActionPerformed
+
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        dispose();
+    }//GEN-LAST:event_CloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -641,6 +663,7 @@ public class D_UR extends javax.swing.JFrame {
     private javax.swing.JButton B006_B_1;
     private javax.swing.JLabel C003_T_1;
     private javax.swing.JPanel C003_T_3;
+    private javax.swing.JButton Close;
     private javax.swing.JLabel D001_L_1;
     private javax.swing.JLabel D001_L_10;
     private javax.swing.JLabel D001_L_11;

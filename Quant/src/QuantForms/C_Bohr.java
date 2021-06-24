@@ -5,9 +5,12 @@
  */
 package QuantForms;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,12 @@ public class C_Bohr extends javax.swing.JFrame {
     public C_Bohr() {
         initComponents();
         setResizable(false);
+        
+        ImageIcon LogoOrbs = new ImageIcon(getClass().getResource("../Images/LogOrbs.png"));
+        Icon IconOrbs = new ImageIcon(LogoOrbs.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+        C003_T_1.setIcon(IconOrbs);
+        
+        this.repaint();
     }
 
     /**
@@ -39,6 +48,7 @@ public class C_Bohr extends javax.swing.JFrame {
         B006_T_3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        Close = new javax.swing.JButton();
         B006_L_1 = new javax.swing.JLabel();
         B006_B_1 = new javax.swing.JButton();
         B006_L_2 = new javax.swing.JLabel();
@@ -52,8 +62,6 @@ public class C_Bohr extends javax.swing.JFrame {
         setTitle("Function Normalizator");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
-
-        C003_T_1.setText("Logo");
 
         B006_T_2.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
         B006_T_2.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,9 +83,9 @@ public class C_Bohr extends javax.swing.JFrame {
         C003_T_3Layout.setHorizontalGroup(
             C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C003_T_3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(C003_T_1)
-                .addGap(36, 36, 36)
+                .addGap(54, 54, 54)
+                .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(B006_T_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,14 +98,18 @@ public class C_Bohr extends javax.swing.JFrame {
         C003_T_3Layout.setVerticalGroup(
             C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C003_T_3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(B006_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(B006_T_3))
-                    .addComponent(B006_T_1))
-                .addGap(0, 20, Short.MAX_VALUE))
+                    .addGroup(C003_T_3Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(B006_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(B006_T_3))
+                            .addComponent(B006_T_1)))
+                    .addGroup(C003_T_3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -106,6 +118,13 @@ public class C_Bohr extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("© QUANT 2020");
 
+        Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -113,13 +132,17 @@ public class C_Bohr extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Close)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Close)))
         );
 
         B006_L_1.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
@@ -195,13 +218,13 @@ public class C_Bohr extends javax.swing.JFrame {
                         .addComponent(B006_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(B006_TF_2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(66, 66, 66))
+                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(C003_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97)
+                .addGap(74, 74, 74)
                 .addComponent(B006_L_1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -217,7 +240,7 @@ public class C_Bohr extends javax.swing.JFrame {
                     .addComponent(B006_TF_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(B006_B_1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -254,6 +277,11 @@ public class C_Bohr extends javax.swing.JFrame {
             Thread thread = new Thread(pythonProcess);
             thread.start();
     }//GEN-LAST:event_B006_B_1ActionPerformed
+
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_CloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,6 +395,7 @@ public class C_Bohr extends javax.swing.JFrame {
     private javax.swing.JLabel B006_T_3;
     private javax.swing.JLabel C003_T_1;
     private javax.swing.JPanel C003_T_3;
+    private javax.swing.JButton Close;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

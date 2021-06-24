@@ -18,6 +18,7 @@ import D_BS as bs
 import D_HFC as hfc
 import D_HFMP2 as hfmp2
 import D_UR as ur 
+import D_CBS as cbs
 
 def B_BlackB_1():
     if len(sys.argv) == 3:
@@ -162,6 +163,14 @@ def D_UR():
         ur.UR(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
     else:
         raise NameError('D_UR: Missing argument')
+        
+def D_CBS():
+    print(len(sys.argv))
+    if len(sys.argv) == 8:
+        print("D_UR")
+        cbs.CBS(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7])
+    else:
+        raise NameError('D_UR: Missing argument')
 
 def function(argument):
     switcher = {
@@ -182,7 +191,8 @@ def function(argument):
         'D_BS': D_BS,
         'D_HFC': D_HFC,
         'D_HFMP2': D_HFMP2,
-        'D_UR': D_UR
+        'D_UR': D_UR,
+        'D_CBS': D_CBS
     }
     func = switcher.get(argument, lambda: "Undefined Function")
     func()

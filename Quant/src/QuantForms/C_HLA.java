@@ -5,9 +5,12 @@
  */
 package QuantForms;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,12 @@ public class C_HLA extends javax.swing.JFrame {
     public C_HLA() {
         initComponents();
         setResizable(false);
+        
+        ImageIcon LogoHLA = new ImageIcon(getClass().getResource("../Images/LogHLA.png"));
+        Icon IconHLA = new ImageIcon(LogoHLA.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+        C004_T_1.setIcon(IconHLA);
+        
+        this.repaint();
     }
 
     /**
@@ -32,12 +41,14 @@ public class C_HLA extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Close1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         C004_T_1 = new javax.swing.JLabel();
         C004_T_2 = new javax.swing.JLabel();
         C004_T_3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        Close2 = new javax.swing.JButton();
         C004_L_1 = new javax.swing.JLabel();
         C004_B_1 = new javax.swing.JButton();
         C004_L_3 = new javax.swing.JLabel();
@@ -49,12 +60,12 @@ public class C_HLA extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
 
+        Close1.setText("Close");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Function Normalizator");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-
-        C004_T_1.setText("Logo");
 
         C004_T_2.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
         C004_T_2.setForeground(new java.awt.Color(255, 255, 255));
@@ -71,9 +82,9 @@ public class C_HLA extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(C004_T_1)
-                .addGap(37, 37, 37)
+                .addGap(54, 54, 54)
+                .addComponent(C004_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(C004_T_2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(C004_T_3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -83,7 +94,7 @@ public class C_HLA extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addComponent(C004_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(C004_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
@@ -101,6 +112,13 @@ public class C_HLA extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("© QUANT 2020");
 
+        Close2.setText("Close");
+        Close2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Close2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -108,13 +126,16 @@ public class C_HLA extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Close2))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Close2)))
         );
 
         C004_L_1.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
@@ -279,6 +300,11 @@ public class C_HLA extends javax.swing.JFrame {
             thread.start();
     }//GEN-LAST:event_C004_B_1ActionPerformed
 
+    private void Close2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_Close2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -339,6 +365,8 @@ public class C_HLA extends javax.swing.JFrame {
     private javax.swing.JLabel C004_T_1;
     private javax.swing.JLabel C004_T_2;
     private javax.swing.JLabel C004_T_3;
+    private javax.swing.JButton Close1;
+    private javax.swing.JButton Close2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

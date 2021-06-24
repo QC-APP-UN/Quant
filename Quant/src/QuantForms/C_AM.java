@@ -5,9 +5,12 @@
  */
 package QuantForms;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,12 @@ public class C_AM extends javax.swing.JFrame {
     public C_AM() {
         initComponents();
         setResizable(false);
+        
+        ImageIcon LogoAM = new ImageIcon(getClass().getResource("../Images/LogAM.png"));
+        Icon IconAM = new ImageIcon(LogoAM.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+        C003_T_1.setIcon(IconAM);
+        
+        this.repaint();
     }
 
     /**
@@ -38,6 +47,7 @@ public class C_AM extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        Close = new javax.swing.JButton();
         C003_L_1 = new javax.swing.JLabel();
         C002_B_1 = new javax.swing.JButton();
         C003_L_2 = new javax.swing.JLabel();
@@ -49,8 +59,6 @@ public class C_AM extends javax.swing.JFrame {
         setTitle("Function Normalizator");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));
-
-        C003_T_1.setText("Logo");
 
         C003_T_2.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
         C003_T_2.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,23 +75,27 @@ public class C_AM extends javax.swing.JFrame {
         C003_T_3Layout.setHorizontalGroup(
             C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C003_T_3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(C003_T_1)
-                .addGap(36, 36, 36)
+                .addGap(44, 44, 44)
+                .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(C003_T_2)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         C003_T_3Layout.setVerticalGroup(
             C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C003_T_3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C003_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(C003_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(C003_T_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(C003_T_3Layout.createSequentialGroup()
+                            .addGap(15, 15, 15)
+                            .addComponent(C003_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(C003_T_3Layout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(jLabel7))))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -92,6 +104,13 @@ public class C_AM extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("© QUANT 2020");
 
+        Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -99,13 +118,17 @@ public class C_AM extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Close)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Close)))
         );
 
         C003_L_1.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
@@ -213,6 +236,10 @@ public class C_AM extends javax.swing.JFrame {
         
     }//GEN-LAST:event_C002_B_1ActionPerformed
 
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        dispose();
+    }//GEN-LAST:event_CloseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,6 +316,7 @@ public class C_AM extends javax.swing.JFrame {
     private javax.swing.JLabel C003_T_1;
     private javax.swing.JLabel C003_T_2;
     private javax.swing.JPanel C003_T_3;
+    private javax.swing.JButton Close;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;

@@ -5,9 +5,12 @@
  */
 package QuantForms;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,12 @@ public class C_NM extends javax.swing.JFrame {
     public C_NM() {
         initComponents();
         setResizable(false);
+        
+        ImageIcon LogoNum = new ImageIcon(getClass().getResource("../Images/LogNum.png"));
+        Icon IconNum = new ImageIcon(LogoNum.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+        C001_T_1.setIcon(IconNum);
+        
+        this.repaint();
     }
 
     /**
@@ -34,6 +43,7 @@ public class C_NM extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Close = new javax.swing.JButton();
         C001_TP = new javax.swing.JPanel();
         C001_T_1 = new javax.swing.JLabel();
         C001_T_2 = new javax.swing.JLabel();
@@ -41,6 +51,7 @@ public class C_NM extends javax.swing.JFrame {
         C001_T_5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        Close1 = new javax.swing.JButton();
         C001_TabP_1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         C001A_TF_1 = new javax.swing.JTextField();
@@ -72,12 +83,17 @@ public class C_NM extends javax.swing.JFrame {
 
         jButton2.setText("Normalize!");
 
+        Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Function Normalizator");
 
         C001_TP.setBackground(new java.awt.Color(0, 153, 153));
-
-        C001_T_1.setText("Logo");
 
         C001_T_2.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
         C001_T_2.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,9 +115,9 @@ public class C_NM extends javax.swing.JFrame {
         C001_TPLayout.setHorizontalGroup(
             C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C001_TPLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(C001_T_1)
-                .addGap(37, 37, 37)
+                .addGap(46, 46, 46)
+                .addComponent(C001_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(C001_T_2)
                 .addGap(18, 18, 18)
                 .addGroup(C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,15 +129,13 @@ public class C_NM extends javax.swing.JFrame {
             C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C001_TPLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addComponent(C001_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(C001_TPLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(C001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(C001_T_5))
-                    .addComponent(C001_T_3))
+                .addGroup(C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(C001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(C001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(C001_T_5))
+                        .addComponent(C001_T_3))
+                    .addComponent(C001_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 20, Short.MAX_VALUE))
         );
 
@@ -131,6 +145,8 @@ public class C_NM extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("© QUANT 2020");
 
+        Close1.setText("Close");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -138,13 +154,16 @@ public class C_NM extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Close1))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Close1)))
         );
 
         C001A_TF_1.setText("R value (non-related to k)");
@@ -220,12 +239,12 @@ public class C_NM extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(C001A_TF_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(C001A_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(C001A_L_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(C001A_B_1)))
-                .addGap(541, 541, 541))
+                .addGap(1435, 1435, 1435))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,18 +451,6 @@ public class C_NM extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void C001A_TF_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_TF_1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_C001A_TF_1ActionPerformed
-
-    private void C001A_TF_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_TF_2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_C001A_TF_2ActionPerformed
-
-    private void C001A_TF_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_TF_3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_C001A_TF_3ActionPerformed
-
     private void C001B_TF_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001B_TF_3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_C001B_TF_3ActionPerformed
@@ -468,25 +475,6 @@ public class C_NM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_C001B_TF_4ActionPerformed
 
-    private void C001A_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_B_1ActionPerformed
-                   
-            String[] pathArray = new String[5];
-            
-            
-            //------- Creation of "python" command -----------------
-            pathArray[0] = Path.executable_path; //Executable Path
-            pathArray[1] = "C_NM_1";
-            pathArray[2] = C001A_TF_1.getText();
-            pathArray[3] = C001A_TF_2.getText();
-            pathArray[4] = C001A_TF_3.getText();
-            //------------------------------------------------------
-                        
-            
-            PythonProcess pythonProcess = new PythonProcess(pathArray);
-            Thread thread = new Thread(pythonProcess);
-            thread.start();
-    }//GEN-LAST:event_C001A_B_1ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
             String[] pathArray = new String[7];
@@ -506,6 +494,39 @@ public class C_NM extends javax.swing.JFrame {
             Thread thread = new Thread(pythonProcess);
             thread.start();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void C001A_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_B_1ActionPerformed
+
+        String[] pathArray = new String[5];
+
+        //------- Creation of "python" command -----------------
+        pathArray[0] = Path.executable_path; //Executable Path
+        pathArray[1] = "C_NM_1";
+        pathArray[2] = C001A_TF_1.getText();
+        pathArray[3] = C001A_TF_2.getText();
+        pathArray[4] = C001A_TF_3.getText();
+        //------------------------------------------------------
+
+        PythonProcess pythonProcess = new PythonProcess(pathArray);
+        Thread thread = new Thread(pythonProcess);
+        thread.start();
+    }//GEN-LAST:event_C001A_B_1ActionPerformed
+
+    private void C001A_TF_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_TF_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_C001A_TF_3ActionPerformed
+
+    private void C001A_TF_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_TF_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_C001A_TF_2ActionPerformed
+
+    private void C001A_TF_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C001A_TF_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_C001A_TF_1ActionPerformed
+
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        dispose();
+    }//GEN-LAST:event_CloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2617,6 +2638,8 @@ public class C_NM extends javax.swing.JFrame {
     private javax.swing.JLabel C001_T_5;
     private javax.swing.JTabbedPane C001_TabP_1;
     private javax.swing.JLabel C002B_L_1;
+    private javax.swing.JButton Close;
+    private javax.swing.JButton Close1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;

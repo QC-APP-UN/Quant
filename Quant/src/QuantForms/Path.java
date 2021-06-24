@@ -11,7 +11,7 @@ package QuantForms;
  */
 public class Path {
     
-    final static public String executable_path = "python ../Python/quant.py";
+    final static public String executable_path = "python3 ../Python/quant.py";
     //final static public String executable_path = "../quant/quant";
     
 }
