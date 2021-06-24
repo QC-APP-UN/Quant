@@ -5,7 +5,7 @@ Created on Fri Nov 20 17:43:35 2020
 @author: davidarchilapena
 """
 
-import eel
+
 
 import numpy as np
 from scipy import integrate
@@ -15,21 +15,21 @@ import matplotlib.animation as animation
 from matplotlib.widgets import Slider
 import os
 
-eel.init('src')
+
 
 e= math.e
 pi = math.pi
 
 #Primero perturbación de la caja.
 
-@eel.expose
+
 def clear():
     os.remove("src/imgpython/perturPlot.gif")
     plt.close('all')
 
 is_manual = False
 
-@eel.expose
+
 def perturECaja(L,n,per,li,ls):
     
     L=float(L)
@@ -44,7 +44,7 @@ def perturECaja(L,n,per,li,ls):
     En= (2*pi)**2*n**2/8
     return str(En+E1)
 
-@eel.expose
+
 def perturCaja(L,n,per,li,ls):
     
     L=float(L)
@@ -292,4 +292,4 @@ def perturOs(v,a,per,li,ls):
     
     plt.show()
         
-perturOs(1,1,'x**2','-inf','inf')
+#perturOs(1,1,'x**2','-inf','inf')

@@ -5,7 +5,7 @@ import sys
 import B_BlackB as bblack
 import B_Box as bbox
 import B_BoxC as bboxc
-#huckel pending
+import B_Huck as huck
 import B_Norm as norm
 import C_AM as am
 import C_Bohr as bohr
@@ -53,9 +53,9 @@ def B_BoxC():
 
 
 def B_Huck():
-    if len(sys.argv) == 4:
+    if len(sys.argv) == 3:
         print("B_Huck")
-        raise NameError('B_Huck: Missing argument') #Pending
+        huck.huc(sys.argv[2])
     else:
         raise NameError('B_Huck: Missing argument')
 
@@ -117,9 +117,9 @@ def C_NM_2():
 
 
 def C_PT_1():
-    if len(sys.argv) == 4:
+    if len(sys.argv) == 7:
         print("C_PT_1")
-        raise NameError('C_PT_1: Missing argument')
+        pt.perturCaja(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
     else:
         raise NameError('C_PT_1: Missing argument')
 
@@ -127,7 +127,7 @@ def C_PT_1():
 def C_PT_2():
     if len(sys.argv) == 4:
         print("C_PT_2")
-        raise NameError('C_PT_2: Missing argument')
+        pt.perturOs(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
     else:
         raise NameError('C_PT_2: Missing argument')
 
@@ -167,7 +167,7 @@ def D_UR():
 def D_CBS():
     print(len(sys.argv))
     if len(sys.argv) == 7:
-        print("D_UR")
+        print("D_CBS")
         cbs.CBS(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
     else:
         raise NameError('D_UR: Missing argument')
