@@ -25,7 +25,7 @@ public class C_PT extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoPT = new ImageIcon(getClass().getResource("../Images/LogPT.png"));
+        ImageIcon LogoPT = new ImageIcon(getClass().getResource("/Images/LogPT.png"));
         Icon IconPT = new ImageIcon(LogoPT.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         PT_LOG.setIcon(IconPT);
         

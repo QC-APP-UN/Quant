@@ -25,7 +25,7 @@ public class B_BlackB extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoBlackB = new ImageIcon(getClass().getResource("../Images/LogBlackB.png"));
+        ImageIcon LogoBlackB = new ImageIcon(getClass().getResource("/Images/LogBlackB.png"));
         Icon IconBlackB = new ImageIcon(LogoBlackB.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         B002_T_4.setIcon(IconBlackB);
         

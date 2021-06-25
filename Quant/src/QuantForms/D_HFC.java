@@ -28,7 +28,7 @@ public class D_HFC extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoHF = new ImageIcon(getClass().getResource("../Images/LogHuck.png"));
+        ImageIcon LogoHF = new ImageIcon(getClass().getResource("/Images/LogHuck.png"));
         Icon IconHF = new ImageIcon(LogoHF.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C003_T_1.setIcon(IconHF);
         

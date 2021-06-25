@@ -24,71 +24,71 @@ public class MainFrame extends javax.swing.JFrame {
         
         // Logotipos
         
-        ImageIcon LogoPrin = new ImageIcon(getClass().getResource("../Images/LogPrin1.png"));
+        ImageIcon LogoPrin = new ImageIcon(getClass().getResource("/Images/LogPrin1.png"));
         Icon IconPrin = new ImageIcon(LogoPrin.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH));
         jLabel7.setIcon(IconPrin);
         
-        ImageIcon LogoBB = new ImageIcon(getClass().getResource("../Images/LogBlackB.png"));
+        ImageIcon LogoBB = new ImageIcon(getClass().getResource("/Images/LogBlackB.png"));
         Icon IconBB = new ImageIcon(LogoBB.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogBlackB.setIcon(IconBB);
         
-        ImageIcon LogoNorm = new ImageIcon(getClass().getResource("../Images/LogNorm.png"));
+        ImageIcon LogoNorm = new ImageIcon(getClass().getResource("/Images/LogNorm.png"));
         Icon IconNorm = new ImageIcon(LogoNorm.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogNorm.setIcon(IconNorm);
         
-        ImageIcon LogoBox = new ImageIcon(getClass().getResource("../Images/LogBox.png"));
+        ImageIcon LogoBox = new ImageIcon(getClass().getResource("/Images/LogBox.png"));
         Icon IconBox = new ImageIcon(LogoBox.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogBox.setIcon(IconBox);
         
-        ImageIcon LogoHuck = new ImageIcon(getClass().getResource("../Images/LogHuck.png"));
+        ImageIcon LogoHuck = new ImageIcon(getClass().getResource("/Images/LogHuck.png"));
         Icon IconHuck = new ImageIcon(LogoHuck.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogHuck.setIcon(IconHuck);
         
-        ImageIcon LogoOrbs = new ImageIcon(getClass().getResource("../Images/LogOrbs.png"));
+        ImageIcon LogoOrbs = new ImageIcon(getClass().getResource("/Images/LogOrbs.png"));
         Icon IconOrbs = new ImageIcon(LogoOrbs.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogOrbs.setIcon(IconOrbs);
         
-        ImageIcon LogoNum = new ImageIcon(getClass().getResource("../Images/LogNum.png"));
+        ImageIcon LogoNum = new ImageIcon(getClass().getResource("/Images/LogNum.png"));
         Icon IconNum = new ImageIcon(LogoNum.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogNum.setIcon(IconNum);
         
-        ImageIcon LogoIAO = new ImageIcon(getClass().getResource("../Images/LogIAO.png"));
+        ImageIcon LogoIAO = new ImageIcon(getClass().getResource("/Images/LogIAO.png"));
         Icon IconIAO = new ImageIcon(LogoIAO.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogIAO.setIcon(IconIAO);
         
-        ImageIcon LogoAM = new ImageIcon(getClass().getResource("../Images/LogAM.png"));
+        ImageIcon LogoAM = new ImageIcon(getClass().getResource("/Images/LogAM.png"));
         Icon IconAM = new ImageIcon(LogoAM.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogAM.setIcon(IconAM);
         
-        ImageIcon LogoHLA = new ImageIcon(getClass().getResource("../Images/LogHLA.png"));
+        ImageIcon LogoHLA = new ImageIcon(getClass().getResource("/Images/LogHLA.png"));
         Icon IconHLA = new ImageIcon(LogoHLA.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogHLA.setIcon(IconHLA);
         
-        ImageIcon LogoPT = new ImageIcon(getClass().getResource("../Images/LogPT.png"));
+        ImageIcon LogoPT = new ImageIcon(getClass().getResource("/Images/LogPT.png"));
         Icon IconPT = new ImageIcon(LogoPT.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogPT.setIcon(IconPT);
         
-        ImageIcon LogoUR = new ImageIcon(getClass().getResource("../Images/LogUR.png"));
+        ImageIcon LogoUR = new ImageIcon(getClass().getResource("/Images/LogUR.png"));
         Icon IconUR = new ImageIcon(LogoUR.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogUR.setIcon(IconUR);
         
-        ImageIcon LogoBS = new ImageIcon(getClass().getResource("../Images/LogBS.png"));
+        ImageIcon LogoBS = new ImageIcon(getClass().getResource("/Images/LogBS.png"));
         Icon IconBS = new ImageIcon(LogoBS.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogBS.setIcon(IconBS);
         
-        ImageIcon LogoHF = new ImageIcon(getClass().getResource("../Images/LogHF.png"));
+        ImageIcon LogoHF = new ImageIcon(getClass().getResource("/Images/LogHF.png"));
         Icon IconHF = new ImageIcon(LogoHF.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogHF.setIcon(IconHF);
         
-        ImageIcon LogoHFM = new ImageIcon(getClass().getResource("../Images/LogHFM.png"));
+        ImageIcon LogoHFM = new ImageIcon(getClass().getResource("/Images/LogHFM.png"));
         Icon IconHFM = new ImageIcon(LogoHFM.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogHFM.setIcon(IconHFM);
         
-        ImageIcon LogoBoxC = new ImageIcon(getClass().getResource("../Images/LogBoxC.png"));
+        ImageIcon LogoBoxC = new ImageIcon(getClass().getResource("/Images/LogBoxC.png"));
         Icon IconBoxC = new ImageIcon(LogoBoxC.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogBoxC.setIcon(IconBoxC);
         
-        ImageIcon LogoCBS = new ImageIcon(getClass().getResource("../Images/LogCBS.png"));
+        ImageIcon LogoCBS = new ImageIcon(getClass().getResource("/Images/LogCBS.png"));
         Icon IconCBS = new ImageIcon(LogoCBS.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         LogCBS.setIcon(IconCBS);
         

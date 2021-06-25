@@ -25,7 +25,7 @@ public class B_Huck extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoHuck = new ImageIcon(getClass().getResource("../Images/LogHuck.png"));
+        ImageIcon LogoHuck = new ImageIcon(getClass().getResource("/Images/LogHuck.png"));
         Icon IconHuck = new ImageIcon(LogoHuck.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         B002_T_4.setIcon(IconHuck);
         

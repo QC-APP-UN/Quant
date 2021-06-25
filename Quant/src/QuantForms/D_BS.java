@@ -25,7 +25,7 @@ public class D_BS extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoBS = new ImageIcon(getClass().getResource("../Images/LogBS.png"));
+        ImageIcon LogoBS = new ImageIcon(getClass().getResource("/Images/LogBS.png"));
         Icon IconBS = new ImageIcon(LogoBS.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C003_T_1.setIcon(IconBS);
         

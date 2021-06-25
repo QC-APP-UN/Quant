@@ -25,7 +25,7 @@ public class C_HLA extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoHLA = new ImageIcon(getClass().getResource("../Images/LogHLA.png"));
+        ImageIcon LogoHLA = new ImageIcon(getClass().getResource("/Images/LogHLA.png"));
         Icon IconHLA = new ImageIcon(LogoHLA.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C004_T_1.setIcon(IconHLA);
         

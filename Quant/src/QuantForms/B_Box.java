@@ -25,7 +25,7 @@ public class B_Box extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoBox = new ImageIcon(getClass().getResource("../Images/LogBox.png"));
+        ImageIcon LogoBox = new ImageIcon(getClass().getResource("/Images/LogBox.png"));
         Icon IconBox = new ImageIcon(LogoBox.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         B003_T_2.setIcon(IconBox);
         

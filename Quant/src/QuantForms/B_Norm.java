@@ -24,7 +24,7 @@ public class B_Norm extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoNorm = new ImageIcon(getClass().getResource("../Images/LogNorm.png"));
+        ImageIcon LogoNorm = new ImageIcon(getClass().getResource("/Images/LogNorm.png"));
         Icon IconNorm = new ImageIcon(LogoNorm.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         B001_T_4.setIcon(IconNorm);
         

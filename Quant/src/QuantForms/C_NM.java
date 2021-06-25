@@ -25,7 +25,7 @@ public class C_NM extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoNum = new ImageIcon(getClass().getResource("../Images/LogNum.png"));
+        ImageIcon LogoNum = new ImageIcon(getClass().getResource("/Images/LogNum.png"));
         Icon IconNum = new ImageIcon(LogoNum.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C001_T_1.setIcon(IconNum);
         

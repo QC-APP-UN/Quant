@@ -18,7 +18,7 @@ def BSorbit(n,k,Z):
     B = abs(int(k))
     Z = int(Z)
 
-    if N-B>0:
+    if N-B>=0:
         if k in ['all']:
             for i in range(0, int(n)):
                 B=i+1

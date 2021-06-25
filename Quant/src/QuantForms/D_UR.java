@@ -25,7 +25,7 @@ public class D_UR extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoUR = new ImageIcon(getClass().getResource("../Images/LogUR.png"));
+        ImageIcon LogoUR = new ImageIcon(getClass().getResource("/Images/LogUR.png"));
         Icon IconUR = new ImageIcon(LogoUR.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C003_T_1.setIcon(IconUR);
         

@@ -25,7 +25,7 @@ public class C_Bohr extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoOrbs = new ImageIcon(getClass().getResource("../Images/LogOrbs.png"));
+        ImageIcon LogoOrbs = new ImageIcon(getClass().getResource("/Images/LogOrbs.png"));
         Icon IconOrbs = new ImageIcon(LogoOrbs.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C003_T_1.setIcon(IconOrbs);
         

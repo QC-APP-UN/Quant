@@ -25,7 +25,7 @@ public class D_CBS extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoCBS = new ImageIcon(getClass().getResource("../Images/LogCBS.png"));
+        ImageIcon LogoCBS = new ImageIcon(getClass().getResource("/Images/LogCBS.png"));
         Icon IconCBS = new ImageIcon(LogoCBS.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C004_T_1.setIcon(IconCBS);
         

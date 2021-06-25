@@ -25,7 +25,7 @@ public class C_AM extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoAM = new ImageIcon(getClass().getResource("../Images/LogAM.png"));
+        ImageIcon LogoAM = new ImageIcon(getClass().getResource("/Images/LogAM.png"));
         Icon IconAM = new ImageIcon(LogoAM.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C003_T_1.setIcon(IconAM);
         

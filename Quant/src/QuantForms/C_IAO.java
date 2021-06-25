@@ -25,7 +25,7 @@ public class C_IAO extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         
-        ImageIcon LogoIAO = new ImageIcon(getClass().getResource("../Images/LogIAO.png"));
+        ImageIcon LogoIAO = new ImageIcon(getClass().getResource("/Images/LogIAO.png"));
         Icon IconIAO = new ImageIcon(LogoIAO.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C002_T_1.setIcon(IconIAO);
         
