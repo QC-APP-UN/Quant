@@ -53,7 +53,7 @@ public class B_Norm extends javax.swing.JFrame {
         B001_L_2 = new javax.swing.JLabel();
         B001_L_3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Function Normalizator");
 
         B001_TP.setBackground(new java.awt.Color(0, 153, 153));

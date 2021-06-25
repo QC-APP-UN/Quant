@@ -58,7 +58,7 @@ public class C_Bohr extends javax.swing.JFrame {
         B006_L_4 = new javax.swing.JLabel();
         B006_TF_3 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bohr SommerFeld Orbits");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));

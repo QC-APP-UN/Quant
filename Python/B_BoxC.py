@@ -85,7 +85,7 @@ def anonda(n1,n2,c1,c2):
 inicio=time.time()    
 #anonda(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]) # n1, n2 != n1, c1, c2
 fin=time.time()
-print((fin-inicio)*1000)
+#print((fin-inicio)*1000)
 #execution time around 5-10 sec (could be better)
 #check for later when plots are defined
 #:)

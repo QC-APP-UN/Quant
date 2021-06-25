@@ -62,7 +62,7 @@ public class B_Box extends javax.swing.JFrame {
         B003_TF_6 = new javax.swing.JTextField();
         B003_B_1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Particle in a Box");
 
         B003_TP.setBackground(new java.awt.Color(0, 153, 153));

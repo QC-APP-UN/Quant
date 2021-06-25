@@ -16,6 +16,8 @@ import sys
 e= math.e
 pi = math.pi
 
+plt.rcParams['text.usetex'] = True
+
 def moman(l,m):
 
     l=int(l)
@@ -282,4 +284,4 @@ def hid(n,l,m,Z):
         
     
     
-hid(1,1,1,1)
+#hid(1,1,1,1)

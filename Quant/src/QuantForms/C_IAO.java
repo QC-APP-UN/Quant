@@ -60,7 +60,7 @@ public class C_IAO extends javax.swing.JFrame {
         C002_L_6 = new javax.swing.JLabel();
         C002_CB_1 = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Isentropic Armonic Oscilator");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));

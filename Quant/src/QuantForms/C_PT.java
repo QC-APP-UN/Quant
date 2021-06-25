@@ -81,7 +81,7 @@ public class C_PT extends javax.swing.JFrame {
 
         jButton1.setText("Normalize!");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Perturbation Theory");
 
         C005_T_1.setBackground(new java.awt.Color(0, 153, 153));

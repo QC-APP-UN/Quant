@@ -16,6 +16,7 @@ import decimal
 decimal.getcontext().prec = 100
 
 
+
 e= math.e
 pi = math.pi
 h= 6.62607015*(10**-34)

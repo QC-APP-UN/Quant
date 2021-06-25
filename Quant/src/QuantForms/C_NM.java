@@ -90,7 +90,7 @@ public class C_NM extends javax.swing.JFrame {
             }
         });
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Numerov Method");
 
         C001_TP.setBackground(new java.awt.Color(0, 153, 153));

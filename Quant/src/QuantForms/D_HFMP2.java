@@ -24,8 +24,7 @@ public class D_HFMP2 extends javax.swing.JFrame {
     public D_HFMP2() {
         initComponents();
         setResizable(false);
-        
-        ImageIcon LogoHFM = new ImageIcon(getClass().getResource("../Images/LogHuckM.png"));
+        ImageIcon LogoHFM = new ImageIcon(getClass().getResource("../Images/LogHuck.png"));
         Icon IconHFM = new ImageIcon(LogoHFM.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C003_T_1.setIcon(IconHFM);
         
@@ -62,7 +61,7 @@ public class D_HFMP2 extends javax.swing.JFrame {
         D001_L_2 = new javax.swing.JLabel();
         D001_L_3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("HF vs MP2 Basic");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));

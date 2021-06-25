@@ -294,5 +294,5 @@ def osar(d,f,v1,v2):
         
 #osar(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
 
-osar(2,500,2,2)
+#osar(2,500,2,2)
         

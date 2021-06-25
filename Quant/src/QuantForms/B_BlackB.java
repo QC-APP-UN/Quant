@@ -62,7 +62,7 @@ public class B_BlackB extends javax.swing.JFrame {
         B002B_L_3 = new javax.swing.JLabel();
         B002B_B_1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Black Body");
 
         B001_TP.setBackground(new java.awt.Color(0, 153, 153));

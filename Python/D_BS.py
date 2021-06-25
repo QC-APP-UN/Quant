@@ -231,4 +231,4 @@ def BS_H(b1,b2,UdBS_D,UdBS_A):
     plt.show()
         
     
-BS_H('STO-1G','STO-2G',"0#0","0#0")
+#BS_H('STO-1G','STO-2G',"0#0","0#0")

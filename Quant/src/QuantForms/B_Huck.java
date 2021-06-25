@@ -54,7 +54,7 @@ public class B_Huck extends javax.swing.JFrame {
         B005_TF_1 = new javax.swing.JTextField();
         B005_B_1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Huckel Simplified Method");
 
         B001_TP.setBackground(new java.awt.Color(0, 153, 153));

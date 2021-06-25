@@ -65,7 +65,7 @@ public class D_HFC extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         D002_L_11 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Basic HF Calculations");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));

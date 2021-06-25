@@ -78,7 +78,7 @@ public class D_CBS extends javax.swing.JFrame {
             }
         });
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Complete Basis Set Extrepolation");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));

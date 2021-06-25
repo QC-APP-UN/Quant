@@ -61,7 +61,7 @@ public class D_BS extends javax.swing.JFrame {
         D002_TF_1 = new javax.swing.JTextField();
         D002_TF_2 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Basis Set Comparison");
 
         C003_T_3.setBackground(new java.awt.Color(0, 153, 153));

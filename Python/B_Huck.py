@@ -213,6 +213,6 @@ def huc(x):
         plt.ylim(0,len(Z))
     plt.show()
 
-huc(sys.argv[1])
+#huc(sys.argv[1])
                     
 

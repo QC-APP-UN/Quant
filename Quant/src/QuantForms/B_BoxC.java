@@ -66,7 +66,7 @@ public class B_BoxC extends javax.swing.JFrame {
         B004_TF_1 = new javax.swing.JTextField();
         B004_TF_5 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Particle in a Box : Linear Combinations");
 
         B004_TP.setBackground(new java.awt.Color(0, 153, 153));
@@ -122,6 +122,11 @@ public class B_BoxC extends javax.swing.JFrame {
         jLabel8.setText("© QUANT 2020");
 
         Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout B004_CPLayout = new javax.swing.GroupLayout(B004_CP);
         B004_CP.setLayout(B004_CPLayout);
@@ -326,6 +331,10 @@ public class B_BoxC extends javax.swing.JFrame {
             thread.start();
                                             
     }//GEN-LAST:event_B004_B_1ActionPerformed
+
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        dispose();
+    }//GEN-LAST:event_CloseActionPerformed
 
     /**
      * @param args the command line arguments
