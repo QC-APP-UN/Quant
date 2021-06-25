@@ -24,7 +24,12 @@ public class D_HFMP2 extends javax.swing.JFrame {
     public D_HFMP2() {
         initComponents();
         setResizable(false);
+<<<<<<< HEAD
         ImageIcon LogoHFM = new ImageIcon(getClass().getResource("../Images/LogHuck.png"));
+=======
+        
+        ImageIcon LogoHFM = new ImageIcon(getClass().getResource("../Images/LogHFM.png"));
+>>>>>>> 33a5e17fd4145a668c24004ffdf3c24f8f972107
         Icon IconHFM = new ImageIcon(LogoHFM.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
         C003_T_1.setIcon(IconHFM);
         
