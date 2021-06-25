@@ -384,5 +384,5 @@ def HF_MP2(Z1,Z2,Za,Zb):
     print()
 
 
-#HF_MP2(1,1,1,1)
+HF_MP2(1,1,1,1)
 
