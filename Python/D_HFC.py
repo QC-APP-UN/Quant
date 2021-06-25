@@ -18,7 +18,7 @@ import math as m
 
 
 def basis(string):
-    coef = list(string.split())
+    coef = list(string.split('#'))
     
     for x in coef:
         x= float(x)
@@ -448,6 +448,6 @@ def HF_H2(b1,UdBS_D,UdBS_A,D):
  
     
  
-#HF_H2('STO-3G','0 0','0 0','1.4')
+#HF_H2('STO-3G','0#0','0#0','1.4')
  
     

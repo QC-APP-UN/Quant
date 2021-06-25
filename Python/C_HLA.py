@@ -263,7 +263,7 @@ def hid(n,l,m,Z):
         
         ax3= plt.subplot2grid((6, 16), (3, 9),colspan=6, rowspan=3, projection='3d')
         
-        plt.title(r'$Y_m^l(θ,φ)$'+' l= '+ str(l)+ '; m= '+str(m))
+        plt.title(r'$Y_m^l(\theta,\phi)$'+' l= '+ str(l)+ '; m= '+str(m))
         
         
         import matplotlib.colors as mcolors
@@ -279,7 +279,6 @@ def hid(n,l,m,Z):
     
 
     
-        
     
     
 hid(1,1,1,1)
