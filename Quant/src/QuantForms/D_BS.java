@@ -185,14 +185,14 @@ public class D_BS extends javax.swing.JFrame {
         D002_L_8.setText("Coefficients:");
         D002_L_8.setToolTipText("");
 
-        D002_TF_1.setText("0 0 0");
+        D002_TF_1.setText("0#0#0");
         D002_TF_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 D002_TF_1ActionPerformed(evt);
             }
         });
 
-        D002_TF_2.setText("0 0 0");
+        D002_TF_2.setText("0#0#0");
         D002_TF_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 D002_TF_2ActionPerformed(evt);
@@ -283,10 +283,10 @@ public class D_BS extends javax.swing.JFrame {
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "D_BS";
-            pathArray[2] = "\""+String.valueOf(D002_CB_1.getSelectedItem())+"\"";
-            pathArray[3] = "\""+String.valueOf(D002_CB_2.getSelectedItem())+"\"";
-            pathArray[4] = "\""+D002_TF_2.getText()+"\"";
-            pathArray[5] = "\""+D002_TF_1.getText()+"\"";
+            pathArray[2] = String.valueOf(D002_CB_1.getSelectedItem());
+            pathArray[3] = String.valueOf(D002_CB_2.getSelectedItem());
+            pathArray[4] = D002_TF_2.getText();
+            pathArray[5] = D002_TF_1.getText();
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);

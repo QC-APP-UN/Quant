@@ -93,9 +93,9 @@ def C_HLA():
 
 
 def C_IAO():
-    if len(sys.argv) == 7:
+    if len(sys.argv) == 6:
         print("C_IAO")
-        iao.osar(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
+        iao.osar(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
     else:
         raise NameError('C_IAO: Missing argument')
 
@@ -109,9 +109,9 @@ def C_NM_1():
 
 
 def C_NM_2():
-    if len(sys.argv) == 7:
+    if len(sys.argv) == 8:
         print("C_NM_2")
-        nmb.numerovN2(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
+        nmb.numerovN2(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7])
     else:
         raise NameError('C_NM_2: Missing argument')
 
@@ -125,7 +125,7 @@ def C_PT_1():
 
 
 def C_PT_2():
-    if len(sys.argv) == 4:
+    if len(sys.argv) == 7:
         print("C_PT_2")
         pt.perturOs(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
     else:
@@ -141,31 +141,29 @@ def D_BS():
 
 
 def D_HFC():
-    if len(sys.argv) == 5:
-        print("D_HFC")
-        hfc.HF_H2(sys.argv[2],sys.argv[3],sys.argv[4])
+    if len(sys.argv) == 6:
+        #print("D_HFC")
+        hfc.HF_H2(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
     else:
         raise NameError('D_HFC: Missing argument')
 
 
 def D_HFMP2():
-    if len(sys.argv) == 5:
+    if len(sys.argv) == 6:
         print("D_HFMP2")
-        hfmp2.HF_MP2(sys.argv[2],sys.argv[3],sys.argv[4])
+        hfmp2.HF_MP2(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
     else:
         raise NameError('D_HFMP2: Missing argument')
 
 
 def D_UR():
-    print(len(sys.argv))
-    if len(sys.argv) == 7:
+    if len(sys.argv) == 8:
         print("D_UR")
-        ur.UR(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
+        ur.UR(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7])
     else:
         raise NameError('D_UR: Missing argument')
         
 def D_CBS():
-    print(len(sys.argv))
     if len(sys.argv) == 7:
         print("D_CBS")
         cbs.CBS(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])

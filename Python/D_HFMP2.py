@@ -369,7 +369,10 @@ def HF_MP2(Z1,Z2,Za,Zb):
     plt.figure(figsize=(3,3))
     plt.plot(HFx_axis,HFener,label="HF")
     plt.plot(MP2x_axis,MP2ener,label="MP2")
+    plt.title("HF vs MP2")
     plt.legend()
+    plt.xlabel("Distance")
+    plt.ylabel("Energy")
     plt.show()
 
 
@@ -384,5 +387,5 @@ def HF_MP2(Z1,Z2,Za,Zb):
     print()
 
 
-HF_MP2(1,1,1,1)
+#HF_MP2(1,1,1,1)
 

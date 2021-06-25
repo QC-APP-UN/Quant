@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,21 +34,31 @@ public class PythonProcess implements Runnable{
         Process p;
         try {
             p = Runtime.getRuntime().exec(path);
-            
             String stdin = null;
             String stderr = null;
-            
+            String input = "";
+            String error = "";
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
             BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
             
             
             while((stdin=in.readLine())!=null){
+                input += stdin;
                 System.out.println(stdin);
             }
             
             while((stderr=err.readLine())!=null){
+                error +=stderr;
                 System.out.println(stderr);
             }
+            
+            String [] msgerror=input.split(",");
+            if(msgerror.length>1 && msgerror[msgerror.length-2].equals("ERROR"))
+            JOptionPane.showMessageDialog(null, 
+                              msgerror[msgerror.length-1], 
+                              "Error", 
+                              JOptionPane.WARNING_MESSAGE);
+            
             
         } catch (IOException ex) {
             Logger.getLogger(PythonProcess.class.getName()).log(Level.SEVERE, null, ex);

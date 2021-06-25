@@ -35,7 +35,7 @@ def SBasis(argument):
         'User Defined': 0,
        
     }
-    print(switcher.get(argument, "Invalid Option"))
+    #print(switcher.get(argument, "Invalid Option"))
     return switcher.get(argument, "Invalid Option")
 
 def HF_H2(b1,UdBS_D,UdBS_A,D):

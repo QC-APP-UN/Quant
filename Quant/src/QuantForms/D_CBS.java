@@ -327,12 +327,12 @@ public class D_CBS extends javax.swing.JFrame {
 
     private void D003_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D003_B_1ActionPerformed
                   
-            String[] pathArray = new String[6];
+            String[] pathArray = new String[7];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
-            pathArray[1] = "C_CBS";
+            pathArray[1] = "D_CBS";
             pathArray[2] = D003_TF_1.getText();
             pathArray[3] = D003_TF_2.getText();
             pathArray[4] = D003_TF_3.getText();

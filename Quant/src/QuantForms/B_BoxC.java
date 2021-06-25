@@ -65,6 +65,8 @@ public class B_BoxC extends javax.swing.JFrame {
         B004_B_1 = new javax.swing.JButton();
         B004_TF_1 = new javax.swing.JTextField();
         B004_TF_5 = new javax.swing.JTextField();
+        B004_L_11 = new javax.swing.JLabel();
+        B004_L_12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Particle in a Box : Linear Combinations");
@@ -183,6 +185,12 @@ public class B_BoxC extends javax.swing.JFrame {
         B004_L_7.setText("0");
         B004_L_7.setToolTipText("");
 
+        B004_SL_1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                B004_SL_1StateChanged(evt);
+            }
+        });
+
         B004_L_8.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         B004_L_8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         B004_L_8.setText("1");
@@ -192,6 +200,12 @@ public class B_BoxC extends javax.swing.JFrame {
         B004_L_9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         B004_L_9.setText("0");
         B004_L_9.setToolTipText("");
+
+        B004_SL_2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                B004_SL_2StateChanged(evt);
+            }
+        });
 
         B004_L_10.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
         B004_L_10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -220,46 +234,66 @@ public class B_BoxC extends javax.swing.JFrame {
             }
         });
 
+        B004_L_11.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
+        B004_L_11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        B004_L_11.setText("value");
+        B004_L_11.setToolTipText("");
+
+        B004_L_12.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
+        B004_L_12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        B004_L_12.setText("value");
+        B004_L_12.setToolTipText("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(B004_TP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(B004_CP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(B004_B_1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(B004_L_4, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(B004_L_2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(B004_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(B004_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(B004_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(B004_TF_5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(B004_L_5)
-                        .addGap(36, 36, 36)
-                        .addComponent(B004_L_7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B004_SL_1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B004_L_8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(B004_L_6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(B004_L_9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B004_SL_2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B004_L_10))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(B004_B_1)))
-                .addGap(67, 67, 67))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(B004_L_4, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(B004_L_2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(B004_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(B004_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(B004_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(B004_TF_5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(B004_L_6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(B004_L_9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(B004_SL_2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(B004_L_10))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(B004_L_5)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(B004_L_7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(B004_SL_1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(24, 24, 24)
+                                    .addComponent(B004_L_8))))
+                        .addGap(67, 67, 67))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(B004_L_11)
+                        .addGap(188, 188, 188))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(B004_L_12)
+                        .addGap(189, 189, 189))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,22 +314,28 @@ public class B_BoxC extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(B004_L_4)
                         .addGap(18, 18, 18)
-                        .addComponent(B004_L_5))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(B004_SL_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(B004_L_8, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(B004_L_7))
-                .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(B004_L_5)
+                                .addComponent(B004_L_7))
+                            .addComponent(B004_SL_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(B004_L_8))
+                .addGap(4, 4, 4)
+                .addComponent(B004_L_11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(B004_L_6)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
                             .addComponent(B004_SL_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B004_L_10, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addComponent(B004_L_9)))
-                .addGap(31, 31, 31)
+                            .addGap(6, 6, 6))
+                        .addComponent(B004_L_9))
+                    .addComponent(B004_L_10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(B004_L_12)
+                .addGap(11, 11, 11)
                 .addComponent(B004_B_1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(B004_CP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -336,6 +376,16 @@ public class B_BoxC extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_CloseActionPerformed
 
+    private void B004_SL_1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_B004_SL_1StateChanged
+        double value = Double.valueOf(B004_SL_1.getValue())/100;
+        B004_L_11.setText(String.valueOf(value));
+    }//GEN-LAST:event_B004_SL_1StateChanged
+
+    private void B004_SL_2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_B004_SL_2StateChanged
+        double value = Double.valueOf(B004_SL_2.getValue())/100;
+        B004_L_12.setText(String.valueOf(value));
+    }//GEN-LAST:event_B004_SL_2StateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -354,6 +404,8 @@ public class B_BoxC extends javax.swing.JFrame {
     private javax.swing.JPanel B004_CP;
     private javax.swing.JLabel B004_L_1;
     private javax.swing.JLabel B004_L_10;
+    private javax.swing.JLabel B004_L_11;
+    private javax.swing.JLabel B004_L_12;
     private javax.swing.JLabel B004_L_2;
     private javax.swing.JLabel B004_L_3;
     private javax.swing.JLabel B004_L_4;

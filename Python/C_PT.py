@@ -23,10 +23,6 @@ pi = math.pi
 #Primero perturbación de la caja.
 
 
-def clear():
-    os.remove("src/imgpython/perturPlot.gif")
-    plt.close('all')
-
 is_manual = False
 
 
@@ -50,8 +46,6 @@ def perturCaja(L,n,per,li,ls):
     L=float(L)
     n=float(n)
 
-    plt.close('all')
-    plt.clf()
     
     psi0= '(2/L)**(1/2)*np.sin(pi*x*b/L)'
     psi0 = psi0.replace('L',str(L))
@@ -109,7 +103,7 @@ def perturCaja(L,n,per,li,ls):
     
     axamp = plt.axes([0.25, .03, 0.50, 0.02])
     # Slider
-    samp = Slider(axamp, 'λ', 0, 1, valinit=initial_amp)
+    samp = Slider(axamp, r'$\lambda$', 0, 1, valinit=initial_amp)
     
     
     
@@ -132,9 +126,6 @@ def perturCaja(L,n,per,li,ls):
 #Función Interna
 def cArmonico(v,a):
 
-    plt.close('all') 
-    plt.clf()
-    
     if (-1)**(v)==1:
         
         c=[1]
@@ -206,8 +197,6 @@ def perturEOs(v,a,per,li,ls):
 
 def perturOs(v,a,per,li,ls):
 
-    plt.close('all')
-    plt.clf()
     
     v=int(v)
     a=float(a)
@@ -253,8 +242,7 @@ def perturOs(v,a,per,li,ls):
     # Ploting #
     ###########
 
-    plt.close('all')
-    plt.clf()
+
     fig, ax = plt.subplots()
     
     def S(t,val):
@@ -273,7 +261,7 @@ def perturOs(v,a,per,li,ls):
     
     axamp = plt.axes([0.25, .03, 0.50, 0.02])
     # Slider
-    samp = Slider(axamp, 'λ', 0, 1, valinit=initial_amp)
+    samp = Slider(axamp, r'$\lambda$', 0, 1, valinit=initial_amp)
     
     
     def update(vale):

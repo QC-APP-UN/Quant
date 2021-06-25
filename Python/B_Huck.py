@@ -177,7 +177,7 @@ def huc(x):
     for i in range(len(Coef)):
         Cof=(Coef[:,i])
         for k in range(len(Cof)):
-            Z.append(str("Φ"+ str(i+1) +'='+''+','.join(map(str,Cof))))
+            Z.append(str(r"$\phi$"+ str(i+1) +'='+''+','.join(map(str,Cof))))
             break
             np.delete(Cof)
             continue
@@ -197,7 +197,7 @@ def huc(x):
         plt.subplot(1,2,1)
         Lin=[X[i]-0.25,X[i],X[i]+0.25]
         Y=[Vals[i],Vals[i],Vals[i]]
-        plt.plot(Lin,Y,label='Φ'+str(i+1))
+        plt.plot(Lin,Y,label=r"$\phi$"+str(i+1))
         plt.xlim(-2,2)
         plt.legend()
         Lin.clear()

@@ -209,7 +209,7 @@ public class C_PT extends javax.swing.JFrame {
         C005A_L_5.setText("Perturbation Range:");
         C005A_L_5.setToolTipText("");
 
-        C005A_TF_4.setText("-inf");
+        C005A_TF_4.setText("0");
         C005A_TF_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 C005A_TF_4ActionPerformed(evt);
@@ -221,7 +221,7 @@ public class C_PT extends javax.swing.JFrame {
         C005A_L_6.setText("to");
         C005A_L_6.setToolTipText("");
 
-        C005A_TF_5.setText("inf");
+        C005A_TF_5.setText("0.5");
         C005A_TF_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 C005A_TF_5ActionPerformed(evt);
@@ -252,29 +252,24 @@ public class C_PT extends javax.swing.JFrame {
         C005A_P_0Layout.setHorizontalGroup(
             C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(C005A_P_0Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(33, 33, 33)
                 .addGroup(C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(C005A_B_1)
                     .addGroup(C005A_P_0Layout.createSequentialGroup()
-                        .addComponent(C005A_B_1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, C005A_P_0Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(C005A_P_0Layout.createSequentialGroup()
-                                .addComponent(C005A_TF_4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(C005A_L_6)
-                                .addGap(33, 33, 33)
-                                .addComponent(C005A_TF_5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(C005A_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(C005A_TF_2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(C005A_L_3)
-                            .addComponent(C005A_L_4)
-                            .addComponent(C005A_L_5)
-                            .addComponent(C005A_TF_3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(C005A_L_2)
-                            .addComponent(C005A_L_1))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addComponent(C005A_TF_4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(C005A_L_6)
+                        .addGap(33, 33, 33)
+                        .addComponent(C005A_TF_5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(C005A_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(C005A_TF_2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(C005A_L_3)
+                    .addComponent(C005A_L_4)
+                    .addComponent(C005A_L_5)
+                    .addComponent(C005A_TF_3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(C005A_L_2)
+                    .addComponent(C005A_L_1))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         C005A_P_0Layout.setVerticalGroup(
             C005A_P_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,8 +299,9 @@ public class C_PT extends javax.swing.JFrame {
                             .addComponent(C005A_TF_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005A_TF_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(C005A_L_6))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(C005A_B_1)
-                .addGap(27, 27, 27))
+                .addGap(15, 15, 15))
         );
 
         C005A_TP_1.addTab("Particle in a Box", C005A_P_0);
@@ -483,14 +479,17 @@ public class C_PT extends javax.swing.JFrame {
 
     private void C005A_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C005A_B_1ActionPerformed
         
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[7];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "C_PT_1";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = C005A_TF_2.getText();
+            pathArray[3] = C005A_TF_3.getText();
+            pathArray[4] = C005A_TF_1.getText();
+            pathArray[5] = C005A_TF_4.getText();
+            pathArray[6] = C005A_TF_5.getText();
             //------------------------------------------------------
             
             PythonProcess pythonProcess = new PythonProcess(pathArray);
@@ -508,14 +507,17 @@ public class C_PT extends javax.swing.JFrame {
 
     private void C005B_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C005B_B_1ActionPerformed
         
-            String[] pathArray = new String[4];
+            String[] pathArray = new String[7];
             
             
             //------- Creation of "python" command -----------------
             pathArray[0] = Path.executable_path; //Executable Path
             pathArray[1] = "C_PT_2";
-            pathArray[2] = "5";
-            pathArray[3] = "3";
+            pathArray[2] = C005B_TF_3.getText();
+            pathArray[3] = C005B_TF_2.getText();
+            pathArray[4] = C005B_TF_1.getText();
+            pathArray[5] = C005B_TF_4.getText();
+            pathArray[6] = C005B_TF_5.getText();
             //------------------------------------------------------
                         
             PythonProcess pythonProcess = new PythonProcess(pathArray);

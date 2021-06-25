@@ -50,8 +50,6 @@ public class B_Norm extends javax.swing.JFrame {
         B001_TF_1 = new javax.swing.JTextField();
         B001_L_1 = new javax.swing.JLabel();
         B001_B_1 = new javax.swing.JButton();
-        B001_L_2 = new javax.swing.JLabel();
-        B001_L_3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Function Normalizator");
@@ -78,7 +76,7 @@ public class B_Norm extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(B001_T_1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(B001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(B001_T_2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         B001_TPLayout.setVerticalGroup(
@@ -86,15 +84,15 @@ public class B_Norm extends javax.swing.JFrame {
             .addGroup(B001_TPLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(B001_T_4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(B001_TPLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(B001_TPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(B001_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(B001_TPLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(B001_T_2)))
-                .addGap(0, 20, Short.MAX_VALUE))
+                        .addComponent(B001_T_2))
+                    .addComponent(B001_T_1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         B001_CR.setBackground(new java.awt.Color(204, 204, 204));
@@ -150,14 +148,6 @@ public class B_Norm extends javax.swing.JFrame {
             }
         });
 
-        B001_L_2.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
-        B001_L_2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        B001_L_2.setText("The normalizatin constant is:");
-
-        B001_L_3.setFont(new java.awt.Font("Baskerville", 0, 18)); // NOI18N
-        B001_L_3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        B001_L_3.setText("Enter a function...");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,13 +158,11 @@ public class B_Norm extends javax.swing.JFrame {
                 .addGap(104, 104, 104)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(B001_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B001_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B001_L_2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B001_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
-                        .addComponent(B001_B_1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(B001_B_1))
+                    .addComponent(B001_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,11 +172,7 @@ public class B_Norm extends javax.swing.JFrame {
                 .addComponent(B001_L_1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(B001_TF_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(B001_L_2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(B001_L_3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addComponent(B001_B_1)
                 .addGap(107, 107, 107)
                 .addComponent(B001_CR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -268,8 +252,6 @@ public class B_Norm extends javax.swing.JFrame {
     private javax.swing.JPanel B001_CR;
     private javax.swing.JLabel B001_CRT;
     private javax.swing.JLabel B001_L_1;
-    private javax.swing.JLabel B001_L_2;
-    private javax.swing.JLabel B001_L_3;
     private javax.swing.JTextField B001_TF_1;
     private javax.swing.JPanel B001_TP;
     private javax.swing.JLabel B001_T_1;

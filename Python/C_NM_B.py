@@ -129,9 +129,9 @@ def numerovN2(n,R,E1,E2,xi,xf):
         if abs(E1-E2)<0.0001:
             wpsi = False
         
-    print(E1)
+    #print(E1)
     if abs(E1-eLimSUP)<0.0001 or abs(E1-eLimINF)<0.0001 :
-        print("No hay energías reducidas en el intervalo")
+        print(",ERROR,There are no reduced energies in the range")
         response= "No hay energías reducidas en el intervalo"
     else:
         PsiI(E1,Pot)
@@ -143,4 +143,4 @@ def numerovN2(n,R,E1,E2,xi,xf):
 #El truco puede estar en usar los límites como condición para decidir si es
 #o no un buen valor de energía.
 
-numerovN2(2,1,0,1,0,2)
+#numerovN2(2,1,0,1,0,2)

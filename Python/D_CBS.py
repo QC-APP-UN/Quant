@@ -11,7 +11,7 @@ Contributor: David Archila Peña
 # CBS limit basis set extrapolation. 
 
 import numpy as np
-import scipy
+from scipy import optimize 
 import matplotlib.pyplot as plt
 
 
@@ -41,7 +41,7 @@ def CBS(E2,E3,E4,E5,E6):
     
     # perform the fit
     p0 = (10, 1, 20) # start with values near those we expect
-    params, cv = scipy.optimize.curve_fit(monoExp, xs, ys, p0)
+    params, cv = optimize.curve_fit(monoExp, xs, ys, p0)
     m, t, b = params
     
     
@@ -58,12 +58,12 @@ def CBS(E2,E3,E4,E5,E6):
     plt.plot(xs, ys, 'k*', label="Data")
     plt.plot(x, monoExp(x, m, t, b), '--', label="Fitted")
     plt.plot(x,yb, 'b--',linewidth=0.5,label= "HF-CBS limit")
-    plt.title(r"Fitted Exponential Curve to $E_R(L)=E_R(\infty)+Ae^{-BL}$")
+    plt.title("Fitted Exponential Curve to\n" +r"$E_R(L)=$"+f"${m} * EXP(-{t} * x) + {b}4$")
     plt.legend()
-    plt.savefig(fname='Dot',dpi=500)
+    plt.show()
     
     # inspect the parameters
-    print(f"Y = {m} * e^(-{t} * x) + {b}")
+    #print(f"Y = {m} * e^(-{t} * x) + {b}")
     
     
 #CBS(-128.488775551593,-128.531861636113,\

@@ -136,9 +136,9 @@ def numerovN2(k,E1,E2):
         if abs(E1-E2)<0.0001:
             wpsi = False
         
-    print(E1)
+    #print(E1)
     if abs(E1-eLimSUP)<0.0001 or abs(E1-eLimINF)<0.0001 :
-        print("No hay energías reducidas en el intervalo")
+        print(",ERROR,There are no reduced energies in the range")
         response = "No hay energías reducidas en el intervalo"
     else:
         PsiI(E1,Pot)

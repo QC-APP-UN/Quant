@@ -59,6 +59,7 @@ public class C_IAO extends javax.swing.JFrame {
         C002_SL_1 = new javax.swing.JSlider();
         C002_L_6 = new javax.swing.JLabel();
         C002_CB_1 = new javax.swing.JComboBox<>();
+        C002_L_7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Isentropic Armonic Oscilator");
@@ -181,15 +182,28 @@ public class C_IAO extends javax.swing.JFrame {
 
         C002_L_5.setFont(new java.awt.Font("Ancizar Sans", 0, 18)); // NOI18N
         C002_L_5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        C002_L_5.setText("0.01 Hz");
+        C002_L_5.setText("10 Hz");
         C002_L_5.setToolTipText("");
+
+        C002_SL_1.setMaximum(700);
+        C002_SL_1.setMinimum(10);
+        C002_SL_1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                C002_SL_1StateChanged(evt);
+            }
+        });
 
         C002_L_6.setFont(new java.awt.Font("Ancizar Sans", 0, 18)); // NOI18N
         C002_L_6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        C002_L_6.setText("1000Hz");
+        C002_L_6.setText("value");
         C002_L_6.setToolTipText("");
 
         C002_CB_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+
+        C002_L_7.setFont(new java.awt.Font("Ancizar Sans", 0, 18)); // NOI18N
+        C002_L_7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        C002_L_7.setText("700Hz");
+        C002_L_7.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,12 +214,6 @@ public class C_IAO extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(C002_L_5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(C002_SL_1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(C002_L_6))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(C002_L_4, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
@@ -221,9 +229,21 @@ public class C_IAO extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(C002_CB_1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
+                        .addComponent(C002_L_5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(C002_SL_1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(C002_L_7)))
+                .addGap(90, 90, 90))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addComponent(C002_L_6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
                         .addComponent(C002_B_1)))
-                .addGap(96, 96, 96))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,10 +267,12 @@ public class C_IAO extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(C002_L_5)
                     .addComponent(C002_SL_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(C002_L_6))
-                .addGap(33, 33, 33)
+                    .addComponent(C002_L_7))
+                .addGap(5, 5, 5)
+                .addComponent(C002_L_6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(C002_B_1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -267,7 +289,7 @@ public class C_IAO extends javax.swing.JFrame {
 
     private void C002_B_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C002_B_1ActionPerformed
         
-            String[] pathArray = new String[7];
+            String[] pathArray = new String[6];
             
             
             //------- Creation of "python" command -----------------
@@ -275,9 +297,8 @@ public class C_IAO extends javax.swing.JFrame {
             pathArray[1] = "C_IAO";
             pathArray[2] = String.valueOf(C002_CB_1.getSelectedItem());
             pathArray[3] = String.valueOf(C002_SL_1.getValue());
-            pathArray[4] = "1";
-            pathArray[5] = jTextField2.getText();
-            pathArray[6] = jTextField4.getText();
+            pathArray[4] = jTextField2.getText();
+            pathArray[5] = jTextField4.getText();
             //------------------------------------------------------
                         
             
@@ -289,6 +310,10 @@ public class C_IAO extends javax.swing.JFrame {
     private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
         dispose();
     }//GEN-LAST:event_CloseActionPerformed
+
+    private void C002_SL_1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_C002_SL_1StateChanged
+        C002_L_6.setText(String.valueOf(C002_SL_1.getValue()));
+    }//GEN-LAST:event_C002_SL_1StateChanged
 
     /**
      * @param args the command line arguments
@@ -397,6 +422,7 @@ public class C_IAO extends javax.swing.JFrame {
     private javax.swing.JLabel C002_L_4;
     private javax.swing.JLabel C002_L_5;
     private javax.swing.JLabel C002_L_6;
+    private javax.swing.JLabel C002_L_7;
     private javax.swing.JSlider C002_SL_1;
     private javax.swing.JLabel C002_T_1;
     private javax.swing.JLabel C002_T_2;

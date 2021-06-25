@@ -21,9 +21,6 @@ hbar= 1.054571628*10**-34
     
 
 def cArmonico1D(v,a,f):
-
-    plt.close('all')
-    plt.clf()
     
     if f>=1:
         l= 0.0291181*f+1.55316
@@ -90,9 +87,6 @@ def cArmonico1D(v,a,f):
 
 def cArmonico2D(v1,v2,a,f):
 
-    plt.close('all')
-    plt.clf()
-    
     if f>=1:
         l= 0.0291181*f+1.55316
     else:
@@ -264,8 +258,6 @@ def cArmonico2D(v1,v2,a,f):
         X, Y = np.meshgrid(x, y)
         Z = vec_psi(X, Y,a)
         
-        plt.close('all')
-        plt.clf()
         fig = plt.figure()
         ax = plt.axes(projection='3d')
         ax.contour3D(X, Y, Z, 50, cmap='viridis', edgecolor='none')
@@ -277,6 +269,8 @@ def cArmonico2D(v1,v2,a,f):
         plt.show()
 
 def osar(d,f,v1,v2):
+
+    f=int(f)
 
     d=int(d)
 
@@ -294,5 +288,5 @@ def osar(d,f,v1,v2):
         
 #osar(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
 
-#osar(2,500,2,2)
+#osar(1,500,2,2)
         
